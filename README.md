@@ -6,7 +6,7 @@
 -   dir --> _practice/_
 -   dir --> _expe/_
 
-
+[Jupyter Guía ](https://www.dataquest.io/blog/jupyter-notebook-tutorial/)
 
 
 
