@@ -9,10 +9,3 @@
 -   dir --> _expe/_
 
 [Jupyter Guía ](https://www.dataquest.io/blog/jupyter-notebook-tutorial/)
-
-
-
-
---------------------------  NOTA (como siempre) --------------------------------------
-
-dir local _openCvproj_ y repo _opencvProjects_
