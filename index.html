@@ -6,12 +6,86 @@
     <title>Colores aleatorios</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+<style>
+    
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff;
+    transition: background-color 0.5s ease;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+#color-code {
+    font-weight: bold;
+    color: #333;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+</style>
 <body>
     <div class="container" id="color-container">
         <h1>Colores al azar</h1>
         <p>Color de fondo: <span id="color-code">#333</span></p>
         <button id="color-btn">Cambiar color</button>
     </div>
-    <script src="script.js"></script>
+    <script>
+        // función que genera un color hexadecimal aleatorio
+function getRandomColor() {
+    const hexChars = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+    color += hexChars[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+document.getElementById('color-btn').addEventListener('click', function () {
+    const newColor = getRandomColor();
+    document.body.style.backgroundColor = newColor; // Cambia el color de fondo
+    document.getElementById('color-code').textContent = newColor; // el nombre del color de fondo
+});
+    </script>
 </body>
 </html>
