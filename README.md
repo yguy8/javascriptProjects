@@ -1,3 +1,3 @@
-## Proyectos de **JavaSCript** 
+## Proyectos de **JavaScript** 
 
 
