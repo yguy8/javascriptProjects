@@ -71,6 +71,15 @@ button:hover {
         <p>Color de fondo: <span id="color-code">#333</span></p>
         <button id="color-btn">Cambiar color</button>
     </div>
+    <div class="container">
+        <h1>Colores que combinan</h1>
+        <div id="palette" style="display: flex; gap: 10px; justify-content: center; margin-top: 20px;">
+            <div style="width: 50px; height: 50px; background-color: #FF5733;"></div>
+            <div style="width: 50px; height: 50px; background-color: #33FF57;"></div>
+            <div style="width: 50px; height: 50px; background-color: #3357FF;"></div>
+            <div style="width: 50px; height: 50px; background-color: #F1C40F;"></div>
+            <div style="width: 50px; height: 50px; background-color: #8E44AD;"></div>
+    </div>
     <script>
         // función que genera un color hexadecimal aleatorio
 function getRandomColor() {
@@ -86,6 +95,7 @@ document.getElementById('color-btn').addEventListener('click', function () {
     document.body.style.backgroundColor = newColor; // Cambia el color de fondo
     document.getElementById('color-code').textContent = newColor; // el nombre del color de fondo
 });
+
     </script>
 </body>
 </html>
