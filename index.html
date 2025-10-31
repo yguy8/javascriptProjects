@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Colores aleatorios</title>
+    <link rel="icon" href="https://gd7distribuidor.com.br/wp-content/uploads/2020/01/gd7_cores_destaque.jpg" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
 </head>
 <style>
@@ -27,12 +28,48 @@ body {
 
 .container {
     text-align: center;
-    padding: 20px;
-    border: 2px solid #333;
+    padding-top: 20px;
+    margin-top: 1rem;
     border-radius: 10px;
     background-color: #f9f9f9;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+.palette-style{
+    display: flex;
+    /* flex-direction: row; */
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.color-block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:10px;
+}
+.color-block p{
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+.color-block div{
+    width: 100px; 
+    height: 100px;
+    border:none;
+}
+/* .palette-style div{
+    width: 100px; 
+    height: 100px;
+    margin-top: 10px;
+    border:none;
+}
+.palette-style p{
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    gap:10;
+} */
 
 h1 {
     margin-bottom: 20px;
@@ -51,12 +88,13 @@ p {
 
 button {
     padding: 10px 20px;
+    margin:10px;
     font-size: 16px;
     color: #fff;
     background-color: #007BFF;
-    border: none;
     border-radius: 5px;
     cursor: pointer;
+    border:none;
     transition: background-color 0.3s ease;
 }
 
@@ -70,17 +108,20 @@ button:hover {
         <h1>Colores al azar</h1>
         <p>Color de fondo: <span id="color-code">#333</span></p>
         <button id="color-btn">Cambiar color</button>
-    </div>
-    <div class="container">
-        <h1>Colores que combinan</h1>
-        <div id="palette" style="display: flex; gap: 10px; justify-content: center; margin-top: 20px;">
-            <div style="width: 50px; height: 50px;" ></div>
-            <p id="name-color">#000</p>
-            <div style="width: 50px; height: 50px;" ></div>
-            <p id="name-color">#000</p>
-            <div style="width: 50px; height: 50px;" ></div>
-            <p id="name-color">#000</p>
-        </div>
+            <div id="palette" class="palette-style">
+                <div class="color-block">
+                    <p><span id="color-name">#000</span></p>
+                    <div></div>
+                </div>
+                <div class="color-block">
+                    <p><span id="color-name-two">#000</span></p>
+                    <div ></div>
+                </div>
+                <div class="color-block">
+                    <p><span id="color-name-three">#000</span></p>
+                    <div></div>
+                </div>
+            </div>
     </div>
     <script>
         // función que genera un color hexadecimal aleatorio
@@ -119,19 +160,10 @@ document.getElementById('color-btn').addEventListener('click', function () {
     paletteDivs[0].style.backgroundColor = baseColor;
     paletteDivs[1].style.backgroundColor = complementaryColor;
     paletteDivs[2].style.backgroundColor = baseColor;
-    document.getElementById('name-color').textContent = baseColor; 
+    document.getElementById('color-name').textContent = baseColor; 
+    document.getElementById('color-name-two').textContent = complementaryColor;
+    document.getElementById('color-name-three').textContent = baseColor;
 
-
-    // Generar colores análogos
-    // Convertir el color hexadecimal a HSL
-    // const analog1 = getAnalogousColor(baseColor, 230);
-    // const analog2 = getAnalogousColor(baseColor, -30);
-    // paletteDivs[2].style.backgroundColor = analog1;
-    // paletteDivs[3].style.backgroundColor = analog2;
-
-    // Generar un color triádico
-    // const triadic = getTriadicColor(baseColor);
-    // paletteDivs[4].style.backgroundColor = triadic;
 });
     </script>
 </body>
