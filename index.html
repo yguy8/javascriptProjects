@@ -134,21 +134,27 @@ button:hover {
     <script>
     // función para copiar texto al portapapeles
     function copyText() {
-        const text = document.getElementById("textToCopy").innerText;
-            navigator.clipboard.writeText(text).then(() => {
-            //alert("Texto copiado al portapapeles: " + text);
-            const icon = document.querySelector('.copy-icon');
-            icon.style.stroke = "#06b109"; // Cambia el color del icono a verde
-            //añadir un texto emergente
-            setTimeout(() => {
-                icon.style.stroke = "#1e00ff"; // Vuelve al color original después de 1 segundo
-                const elemento = document.getElementById("color-code");
-                elemento.textContent = "copiado!";
-            }, 1000);
-        }).catch(err => {
-            alert("Error al copiar el texto: ", err);
-        });
-    }
+    const textElement = document.getElementById("textToCopy");
+    const text = textElement.innerText;
+
+    const elemento = document.getElementById("color-code");
+    const originalText = elemento.textContent; // guardamos el texto original
+
+    navigator.clipboard.writeText(text).then(() => {
+        const icon = document.querySelector('.copy-icon');
+        icon.style.stroke = "#06b109"; // verde
+
+        elemento.textContent = "¡Copiado!";
+
+        setTimeout(() => {
+            icon.style.stroke = "#1e00ff"; // vuelve al color original
+            elemento.textContent = originalText; // restauramos el texto original
+        }, 1500); // dura 1 segundo, ajusta según lo que quieras
+    }).catch(err => {
+        alert("Error al copiar el texto: " + err);
+    });
+}
+
         // función que genera un color hexadecimal aleatorio
         function getRandomColor() {
             const hexChars = '0123456789ABCDEF';
