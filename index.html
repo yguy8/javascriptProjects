@@ -101,9 +101,9 @@ button:hover {
 <body>
     <div class="container" id="color-container">
         <h2>Generador de paletas al azar</h2>
-        <p>Color de fondo: <p id="textToCopy"><span id="color-code">#333</span>
-        <svg class="copy-icon" onclick="copyText()" 
-        xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+        <p>Color de fondo: <p><span id="color-code">#333</span>
+        <svg class="copy-icon" onclick="copyText(this)" 
+        xmlns="http://www.w3.org/2000/svg" width="15" height="15" 
         viewBox="0 0 24 24" fill="none" stroke="#1e00ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
         class="icon icon-tabler icons-tabler-outline icon-tabler-copy"><path stroke="none" d="M0 0h24v24H0z" fill="none"/>
         <path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 
@@ -113,44 +113,86 @@ button:hover {
         <button id="color-btn">Generar paleta</button>
             <div id="palette" class="palette-style">
                 <div class="color-block">
-                    <p class="color-label"><span id="color-name">#000</span></p>
+                    <p class="color-label"><span id="color-name">#000</span> 
+                        <svg class="copy-icon" onclick="copyText(this)" 
+                        xmlns="http://www.w3.org/2000/svg" width="15" height="15" 
+                        viewBox="0 0 24 24" fill="none" stroke="#1e00ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-copy"><path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 
+                        2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 
+                        -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                    </p>
                     <div class="color-box"></div>
                 </div>
                 <div class="color-block">
-                    <p class="color-label"><span id="color-name-two">#000</span></p>
+                    <p class="color-label"><span id="color-name-two">#000</span>
+                        <svg class="copy-icon" onclick="copyText(this)" 
+                        xmlns="http://www.w3.org/2000/svg" width="15" height="15" 
+                        viewBox="0 0 24 24" fill="none" stroke="#1e00ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-copy"><path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 
+                        2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 
+                        -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                    </p>
                     <div class="color-box"></div>
                 </div>
                 <div class="color-block">
-                    <p class="color-label"><span id="color-name-three">#000</span></p>
+                    <p class="color-label"><span id="color-name-three">#000</span>
+                        <svg class="copy-icon" onclick="copyText(this)" 
+                        xmlns="http://www.w3.org/2000/svg" width="15" height="15" 
+                        viewBox="0 0 24 24" fill="none" stroke="#1e00ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-copy"><path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 
+                        2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 
+                        -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                    </p>
                     <div class="color-box"></div>
                 </div>
                 <div class="color-block">
-                    <p class="color-label"><span id="color-name-four">#000</span></p>
+                    <p class="color-label"><span id="color-name-four">#000</span>
+                        <svg class="copy-icon" onclick="copyText(this)" 
+                        xmlns="http://www.w3.org/2000/svg" width="15" height="15" 
+                        viewBox="0 0 24 24" fill="none" stroke="#1e00ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-copy"><path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 
+                        2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 
+                        -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                    </p>
                     <div class="color-box"></div>
                 </div>
             </div>
     </div>
     <script>
     // función para copiar texto al portapapeles
-    function copyText() {
-    const textElement = document.getElementById("textToCopy");
-    const text = textElement.innerText;
+    function copyText(element) {
+    // 'element' es el ícono SVG al que le hiciste clic.
+    
+    // 1. Buscamos el contenedor padre (el <p>)
+    const parent = element.parentElement;
+    
+    // 2. Buscamos el span que contiene el texto DENTRO de ese padre
+    const textSpan = parent.querySelector("span");
+    
+    // 3. Obtenemos el texto original
+    const originalText = textSpan.innerText;
 
-    const elemento = document.getElementById("color-code");
-    const originalText = elemento.textContent; // guardamos el texto original
+    // 4. Copiamos al portapapeles
+    navigator.clipboard.writeText(originalText).then(() => {
+        
+        // Cambiamos el color del ícono (element es el SVG)
+        element.style.stroke = "#06b109"; // verde
 
-    navigator.clipboard.writeText(text).then(() => {
-        const icon = document.querySelector('.copy-icon');
-        icon.style.stroke = "#06b109"; // verde
+        // Cambiamos el texto del span
+        textSpan.innerText = "¡Copiado!";
 
-        elemento.textContent = "¡Copiado!";
-
+        // Restauramos todo después de 1.5 segundos
         setTimeout(() => {
-            icon.style.stroke = "#1e00ff"; // vuelve al color original
-            elemento.textContent = originalText; // restauramos el texto original
-        }, 1500); // dura 1 segundo, ajusta según lo que quieras
+            element.style.stroke = "#1e00ff"; // vuelve al azul original
+            textSpan.innerText = originalText; // restaura el código hex original
+        }, 1500);
+        
     }).catch(err => {
-        alert("Error al copiar el texto: " + err);
+        alert("Error al copiar: " + err);
     });
 }
 
