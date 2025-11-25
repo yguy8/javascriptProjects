@@ -1,0 +1,108 @@
+:root {
+            /* Colores Pirata/Náufrago */
+            --deep-sea: #192A56; /* Azul profundo */
+            --wood-plank: #4B3832; /* Café oscuro, como madera */
+            --treasure-gold: #FFC300; /* Dorado para acentos */
+            --coral-red: #D62828;
+            --parchment: #FDF0D5; /* Color pergamino/mapa */
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #e0fbfc;
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            padding-top: 50px;
+        }
+
+        /* --- CONTENEDOR PRINCIPAL --- */
+        .pirate-menu-container {
+            position: relative;
+            z-index: 100;
+        }
+
+        /* --- EL BOTÓN DE MENÚ (La Tecla/Placa) --- */
+        .nav-btn {
+            /* Estilo rectangular tipo placa de madera/metal */
+            background-color: var(--deep-sea);
+            color: var(--parchment);
+            font-weight: 700;
+            font-size: 1.1em;
+            padding: 10px 20px;
+            border: 2px solid var(--treasure-gold); /* Borde dorado */
+            border-radius: 6px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease-in-out;
+            display: flex;
+            align-items: center;
+            gap: 8px; /* Espacio entre el texto y el icono */
+        }
+
+        .nav-btn:hover {
+            background-color: #1e3d59;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Estado Activo: Flag izada */
+        .nav-btn.active {
+            background-color: var(--coral-red);
+            border-color: var(--treasure-gold);
+        }
+
+        /* --- ESTILO DEL ICONO ANCLA/BANDERA --- */
+        .material-symbols-outlined {
+            font-size: 20px;
+            color: var(--treasure-gold); /* Color del icono siempre dorado */
+            transition: transform 0.3s ease;
+        }
+
+        /* --- LA LISTA DE OPCIONES (El Mapa Desplegable) --- */
+        .pirate-options {
+            position: absolute;
+            top: 60px; /* Debajo del botón */
+            left: 50%;
+            transform: translateX(-50%) translateY(-10px);
+            background: var(--parchment); /* Color pergamino */
+            width: 220px;
+            padding: 5px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            list-style: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease-out;
+            border: 1px solid var(--wood-plank);
+            text-align: left;
+        }
+        
+        /* Estado visible del menú */
+        .pirate-options.open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .pirate-options li {
+            padding: 10px 15px;
+            color: var(--wood-plank);
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-radius: 4px;
+        }
+
+        .pirate-options li:hover {
+            background-color: rgba(255, 195, 0, 0.1); /* Sutil brillo dorado */
+            color: var(--coral-red);
+        }
+
+        .menu-icon-option {
+            font-size: 20px;
+            color: var(--deep-sea);
+        }

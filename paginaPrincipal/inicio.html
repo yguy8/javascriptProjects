@@ -1,0 +1,56 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isla</title>
+</head>
+<body>
+    <h1>Isla del color</h1>
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isla del Color - Menú Pirata</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="inicio.css">
+</head>
+<body>
+
+    <div class="pirate-menu-container">
+        
+        <button class="nav-btn" onclick="toggleIslandMenu(this)">
+            Menú
+            <span class="material-symbols-outlined">anchor</span>
+        </button>
+
+        <ul class="pirate-options" id="menuLista">
+            <li>
+                <span class="material-symbols-outlined menu-icon-option">map</span>
+                Colores por tema
+            </li>
+            <li>
+                <span class="material-symbols-outlined menu-icon-option">colorize</span>
+                Ingresar color
+            </li>
+            <li>
+                <span class="material-symbols-outlined menu-icon-option">shuffle</span>
+                Colores al azar
+            </li>
+        </ul>
+    </div>
+
+    <script src="inicio.js"></script>
+</body>
+</html>
