@@ -5,6 +5,7 @@
             --treasure-gold: #FFC300; /* Dorado para acentos */
             --coral-red: #D62828;
             --parchment: #FDF0D5; /* Color pergamino/mapa */
+            --green-sea: #45a38f; /* Azul marino claro */
         }
 
         body {
@@ -25,7 +26,7 @@
 
         /* --- EL BOTÓN DE MENÚ (La Tecla/Placa) --- */
         .nav-btn {
-            /* Estilo rectangular tipo placa de madera/metal */
+            /* Estilo rectangular */
             background-color: var(--deep-sea);
             color: var(--parchment);
             font-weight: 700;
@@ -105,4 +106,11 @@
         .menu-icon-option {
             font-size: 20px;
             color: var(--deep-sea);
+        }
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+        a:visited {
+            color: var(--green-sea);
         }
