@@ -1,0 +1,23 @@
+:root{
+    --main-bg-color: #f0f8ff;
+    --link-color: #3333cc;
+    --link-hover: #5e2094;
+}
+body{
+    background-color: var(--main-bg-color);
+    font-family: Arial, sans-serif;
+}
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+li{
+    margin: 10px 0;
+}
+a{
+    text-decoration: none;
+    color: var(--link-color);
+}
+a:hover{
+    color:var(--link-hover);
+}
