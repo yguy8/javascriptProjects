@@ -1,11 +1,21 @@
 :root{
-    --main-bg-color: #f0f8ff;
+    --color-de-fondo: #f0f8ff;
     --link-color: #3333cc;
     --link-hover: #5e2094;
+    --pergamino-bg: #f0dcbb;
+    --rojo-pirata: #a72545;
 }
 body{
-    background-color: var(--main-bg-color);
+    background-color: var(--color-de-fondo);
     font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+h2{
+    text-align: center;
+    color: var(--rojo-pirata);
 }
 ul{
     list-style-type: none;
@@ -14,10 +24,48 @@ ul{
 li{
     margin: 10px 0;
 }
-a{
+a {
+    display: inline-flex;          
+    align-items: center;          
+    gap: 10px;                     
     text-decoration: none;
     color: var(--link-color);
 }
-a:hover{
-    color:var(--link-hover);
+
+a:hover {
+    color: var(--link-hover);
+}
+
+a svg {
+    color: var(--rojo-pirata);
+    width: 40px;
+    height: 40px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+a:hover svg {
+    opacity: 1;
+}
+
+.menu-mapa{
+    background-color: var(--pergamino-bg);
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+}
+.mapa-icon{
+    width: 32px;
+    height: 32px;
+}
+
+.decoracion-fondo{
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 200px;
+    height: 200px;
+    opacity: 0.1;
+    z-index: -1;
 }
