@@ -87,3 +87,42 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+/*Menú de la isla del color*/
+.menu {
+    position: fixed;          /* siempre arriba */
+    top: 0;
+    left: 0;
+    width: 100%;              /* ocupa todo el ancho */
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    z-index: 1000;            /* queda encima de todo */
+}
+
+/* Lista horizontal */
+.menu ul {
+    display: flex;            /* coloca los <li> en fila */
+    justify-content: center;  /* centra las opciones */
+    list-style: none;         /* quita viñetas */
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo de cada opción */
+.menu li {
+  margin: 0 15px;           /* espacio entre opciones */
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 5px 10px;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+/* Hover estilo buscador */
+.menu a:hover {
+  color: #0066cc;           /* cambia color */
+  border-bottom: 2px solid #0066cc; /* subrayado tipo pestaña */
+}
