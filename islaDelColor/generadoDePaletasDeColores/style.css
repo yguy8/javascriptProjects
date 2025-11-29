@@ -1,17 +1,24 @@
-/* General Reset */
+/* Estilos globales */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/*Variables globales*/
+:root{
+    --color-blaco:#ffffff;
+    --color-negro:#333;
+    --azul-boton: #007BFF;
+    --azul-boton-hover: #0056b3;
+}
 body {
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #ffffff;
+    background-color:var(--color-blaco);
     transition: background-color 0.5s ease;
 }
 
@@ -22,7 +29,7 @@ body {
     padding-top: 20px;
     margin-top: 1rem;
     border-radius: 10px;
-    background-color: #f9f9f9;
+    background-color:var(--color-blaco);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 .palette-style{
@@ -53,7 +60,7 @@ body {
 
 h2 {
     margin-bottom: 20px;
-    color: #333;
+    color: var(--color-negro);
 }
 p {
     font-size: 18px;
@@ -69,15 +76,15 @@ p {
 
 #color-code {
     font-weight: bold;
-    color: #333;
+    color: var(--color-negro);
 }
 
 button {
     padding:10px 20px;
     margin: 20px;
     font-size: 16px;
-    color: #fff;
-    background-color: #007BFF;
+    color:var(--color-blaco);
+    background-color:var(--azul-boton);
     border-radius: 5px;
     cursor: pointer;
     border:none;
@@ -85,7 +92,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color:var(--azul-boton-hover);
 }
 /*Menú de la isla del color*/
 .menu {
@@ -95,8 +102,8 @@ button:hover {
     width: 50%;             
     justify-content: center;
     text-align: center;
-    background-color: #f8f8f8;
-    border-bottom: 1px solid #ddd;
+    background-color: var(--color-blaco);
+    border-bottom: 1px solid var(--color-blaco);
     border-radius: 10px;
     padding: 10px 0;
     z-index: 1000;            /* queda encima de todo */
@@ -118,7 +125,7 @@ button:hover {
 
 .menu a {
     text-decoration: none;
-    color: #333;
+    color:var(--color-negro);
     font-weight: 500;
     padding: 5px 10px;
     transition: color 0.3s ease, border-bottom 0.3s ease;
@@ -126,6 +133,6 @@ button:hover {
 
 /* Hover estilo buscador */
 .menu a:hover {
-    color: #0066cc;           /* cambia color */
-    border-bottom: 2px solid #0066cc; /* subrayado tipo pestaña */
+    color: var(--azul-boton-hover);           /* cambia color */
+    border-bottom: 2px solid var(--azul-boton); /* subrayado tipo pestaña */
 }
