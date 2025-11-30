@@ -1,42 +1,3 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
-}
-h1 {
-  color: #333;
-  margin: 10px;
-}
-form {
-  margin-top: 20px;
-}
-label {
-  margin-right: 10px;
-}
-submit {
-  margin-left: 10px;
-}
-
-.color-picker {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-input[type="color"] {
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-}
-
-input[type="color"]::-webkit-color-swatch-wrapper {
-  padding: 0;
-}
-
-input[type="color"]::-webkit-color-swatch {
-  border: none;
-}
-
 /*Menú de la isla del color*/
 .menu {
     position: fixed;          /* siempre arriba */
@@ -79,3 +40,4 @@ input[type="color"]::-webkit-color-swatch {
     color: var(--azul-boton-hover);           /* cambia color */
     border-bottom: 2px solid var(--azul-boton); /* subrayado tipo pestaña */
 }
+
