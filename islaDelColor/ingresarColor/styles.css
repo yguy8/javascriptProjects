@@ -1,6 +1,17 @@
+:root{
+    --color-blaco:#ffffff;
+    --color-negro:#333;
+    --azul-boton: #007BFF;
+    --azul-boton-hover: #0056b3;
+}
 body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color:var(--color-blaco);
+    transition: background-color 0.5s ease;
 }
 h1 {
   color: #333;
