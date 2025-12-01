@@ -5,16 +5,14 @@
       --azul-boton-hover: #0056b3;
     }
 
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: var(--color-blanco);
-      transition: background-color 0.5s ease;
-    }
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   
+    align-items: center;       
+    height: 100vh;            
+}
 
     h1 {
       color: var(--color-negro);
@@ -22,11 +20,11 @@
     }
 
     form {
-      margin-top: 20px;
+      margin-top: 40px;
     }
 
     label {
-      margin-right: 10px;
+      margin: 10px;
     }
 
     input[type="submit"] {
@@ -44,6 +42,10 @@
       background-color: var(--azul-boton-hover);
     }
 
+    .contenedor{
+      background-color: #ffffff;
+    }
+
     .palette {
       display: flex;
       gap: 10px;
@@ -53,20 +55,19 @@
     .color-box {
       width: 60px;
       height: 60px;
+      gap: 10px;
       border-radius: 4px;
       border: 1px solid #ccc;
     }
-*/
 /*Menú de la isla del color*/
 .menu {
     position: fixed;          /* siempre arriba */
     top: 0;
-    left: 0;
     width: 50%;             
     justify-content: center;
     text-align: center;
-    background-color: var(--color-blaco);
-    border-bottom: 1px solid var(--color-blaco);
+    background-color: var(--color-blanco);
+  border-bottom: 1px solid var(--color-blanco);
     border-radius: 10px;
     padding: 10px 0;
     z-index: 1000;            /* queda encima de todo */

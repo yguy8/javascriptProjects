@@ -17,7 +17,6 @@ body {
 .menu {
     position: fixed;          /* siempre arriba */
     top: 0;
-    left: 0;
     width: 50%;             
     justify-content: center;
     text-align: center;
