@@ -1,53 +1,62 @@
-:root{
-    --color-blaco:#ffffff;
-    --color-negro:#333;
-    --azul-boton: #007BFF;
-    --azul-boton-hover: #0056b3;
-}
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color:var(--color-blaco);
-    transition: background-color 0.5s ease;
-}
-h1 {
-  color: #333;
-  margin: 10px;
-}
-form {
-  margin-top: 20px;
-}
-label {
-  margin-right: 10px;
-}
-submit {
-  margin-left: 10px;
-}
+:root {
+      --color-blanco: #ffffff;
+      --color-negro: #333;
+      --azul-boton: #007BFF;
+      --azul-boton-hover: #0056b3;
+    }
 
-.color-picker {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 20px;
-}
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: var(--color-blanco);
+      transition: background-color 0.5s ease;
+    }
 
-input[type="color"] {
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-}
+    h1 {
+      color: var(--color-negro);
+      margin: 10px;
+    }
 
-input[type="color"]::-webkit-color-swatch-wrapper {
-  padding: 0;
-}
+    form {
+      margin-top: 20px;
+    }
 
-input[type="color"]::-webkit-color-swatch {
-  border: none;
-}
+    label {
+      margin-right: 10px;
+    }
 
+    input[type="submit"] {
+      margin-left: 10px;
+      background-color: var(--azul-boton);
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: var(--azul-boton-hover);
+    }
+
+    .palette {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .color-box {
+      width: 60px;
+      height: 60px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+*/
 /*Menú de la isla del color*/
 .menu {
     position: fixed;          /* siempre arriba */

@@ -20,12 +20,14 @@
 
     <div class="color-picker">
     <h1>Página para ingresar un color</h1>
-    <form>
-        <label for="favcolor">Elige tu color favorito:</label>
-        <input type="color" id="favcolor" name="favcolor">
-        <input type="submit">
-    </form>
+        <form id="colorForm">
+            <label for="favcolor">Elige tu color favorito:</label>
+            <input type="color" id="favcolor" name="favcolor">
+            <input type="submit" value="Generar Paleta">
+        </form>
     </div>
+
+    <div class="palette" id="palette"></div>
     <script src="script.js"></script>
 </body>
 </html>
