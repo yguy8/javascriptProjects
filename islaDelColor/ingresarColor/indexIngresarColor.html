@@ -12,78 +12,11 @@
         <ul>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-map-route"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7l6 -3l6 3l6 -3v13l-6 3l-6 -3l-6 3v-13" /><path d="M9 12v.01" /><path d="M6 13v.01" /><path d="M17 15l-4 -4" /><path d="M13 15l4 -4" /></svg>
             <li><a href="../inicio.html">Inicio</a></li>
-            <li><a href="../temaColores/index.html">Colores por tema</a></li>
-            <li><a href="../generadoDePaletasDeColores/index.html">Colores al azar</a></li>
-            <li><a href="../ingresarColor/index.html">Ingresar color</a></li>
+            <li><a href="../temaColores/indexTemas.html">Colores por tema</a></li>
+            <li><a href="../generadoDePaletasDeColores/indexGenerador.html">Colores al azar</a></li>
+            <li><a href="../ingresarColor/indexIngresarColor.html">Ingresar color</a></li>
         </ul>
     </nav>
-
-    <!--
-    ----------Copia del generador al azar que ayuda, pero con input de color-----------
-
-    <div class="container" id="color-container">
-        <h2>Generador de paletas a partir de un color</h2>
-        <p>Ingresa un color: <p><span id="color-code">#FFFFFF</span>
-            <svg class="copy-icon" onclick="copyText(this)" 
-        xmlns="http://www.w3.org/2000/svg" width="15" height="15" 
-        viewBox="0 0 24 24" fill="none" stroke="#1e00ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-        class="icon icon-tabler icons-tabler-outline icon-tabler-copy"><path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-        <path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 
-        2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 
-        -2h10c.75 0 1.158 .385 1.5 1" /></svg> </p></p>
-
-        <button id="color-btn">Generar paleta</button>
-        <div id="palette" class="palette-style">
-                <div class="color-block">
-                    <p class="color-label"><span id="color-name">#FFFFFF</span> 
-                        <svg class="copy-icon" onclick="copyText(this)" 
-                        xmlns="http://www.w3.org/2000/svg" width="15" height="15" 
-                        viewBox="0 0 24 24" fill="none" stroke="#1e00ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="icon icon-tabler icons-tabler-outline icon-tabler-copy"><path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 
-                        2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 
-                        -2h10c.75 0 1.158 .385 1.5 1" /></svg>
-                    </p>
-                    <div class="color-box"></div>
-                </div>
-                <div class="color-block">
-                    <p class="color-label"><span id="color-name-two">#FFFFFF</span>
-                        <svg class="copy-icon" onclick="copyText(this)" 
-                        xmlns="http://www.w3.org/2000/svg" width="15" height="15" 
-                        viewBox="0 0 24 24" fill="none" stroke="#1e00ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="icon icon-tabler icons-tabler-outline icon-tabler-copy"><path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 
-                        2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 
-                        -2h10c.75 0 1.158 .385 1.5 1" /></svg>
-                    </p>
-                    <div class="color-box"></div>
-                </div>
-                <div class="color-block">
-                    <p class="color-label"><span id="color-name-three">#FFFFFF</span>
-                        <svg class="copy-icon" onclick="copyText(this)" 
-                        xmlns="http://www.w3.org/2000/svg" width="15" height="15" 
-                        viewBox="0 0 24 24" fill="none" stroke="#1e00ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="icon icon-tabler icons-tabler-outline icon-tabler-copy"><path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 
-                        2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 
-                        -2h10c.75 0 1.158 .385 1.5 1" /></svg>
-                    </p>
-                    <div class="color-box"></div>
-                </div>
-                <div class="color-block">
-                    <p class="color-label"><span id="color-name-four">#FFFFFF</span>
-                        <svg class="copy-icon" onclick="copyText(this)" 
-                        xmlns="http://www.w3.org/2000/svg" width="15" height="15" 
-                        viewBox="0 0 24 24" fill="none" stroke="#1e00ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="icon icon-tabler icons-tabler-outline icon-tabler-copy"><path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 
-                        2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 
-                        -2h10c.75 0 1.158 .385 1.5 1" /></svg>
-                    </p>
-                    <div class="color-box"></div>
-                </div>
-            </div>
-        </div>-->
 
         <div class="container" id="color-container">
     <h2>Generador de paletas a partir de un color</h2>

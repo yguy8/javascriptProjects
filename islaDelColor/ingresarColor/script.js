@@ -84,10 +84,21 @@ function getTriadicColors(hex) {
     return [triad1, triad2];
 }
 
-// Evento para generar la paleta desde el formulario
+// Sincronizar inputs
+document.getElementById('color-picker').addEventListener('input', function() {
+    document.getElementById('color-input').value = this.value.toUpperCase();
+});
+document.getElementById('color-input').addEventListener('input', function() {
+    const hex = this.value;
+    if(/^#([A-Fa-f0-9]{6})$/.test(hex)) {
+        document.getElementById('color-picker').value = hex;
+    }
+});
+
+// Evento para generar la paleta
 document.getElementById('color-form').addEventListener('submit', function (e) {
     e.preventDefault();
-    const baseColor = document.getElementById('color-input').value || document.getElementById('color-picker').value;
+    const baseColor = document.getElementById('color-input').value;
 
     const complementaryColor = getComplementaryColor(baseColor);
     const triadicColors = getTriadicColors(baseColor);
