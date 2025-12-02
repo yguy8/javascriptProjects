@@ -18,19 +18,69 @@
         </ul>
     </nav>
 
-    <div class="contenedor">
-        <div class="color-picker">
-    <h1>Página para ingresar un color</h1>
-            <form id="colorForm">
-                <label for="favcolor">Elige tu color favorito:</label>
-                <input type="color" id="favcolor" name="favcolor">
-                <input type="submit" value="Generar Paleta">
-            </form>
-        </div>
-    
+    <div class="container" id="color-container">
+        <h2>Generador de paletas a partir de un color</h2>
+        <p>Color de fondo: <p><span id="color-code">#FFFFFF</span>
+            <svg class="copy-icon" onclick="copyText(this)" 
+        xmlns="http://www.w3.org/2000/svg" width="15" height="15" 
+        viewBox="0 0 24 24" fill="none" stroke="#1e00ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="icon icon-tabler icons-tabler-outline icon-tabler-copy"><path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 
+        2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 
+        -2h10c.75 0 1.158 .385 1.5 1" /></svg> </p></p>
 
-    <div class="palette" id="palette"></div>
-    </div>
+        <button id="color-btn">Generar paleta</button>
+        <div id="palette" class="palette-style">
+                <div class="color-block">
+                    <p class="color-label"><span id="color-name">#FFFFFF</span> 
+                        <svg class="copy-icon" onclick="copyText(this)" 
+                        xmlns="http://www.w3.org/2000/svg" width="15" height="15" 
+                        viewBox="0 0 24 24" fill="none" stroke="#1e00ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-copy"><path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 
+                        2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 
+                        -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                    </p>
+                    <div class="color-box"></div>
+                </div>
+                <div class="color-block">
+                    <p class="color-label"><span id="color-name-two">#FFFFFF</span>
+                        <svg class="copy-icon" onclick="copyText(this)" 
+                        xmlns="http://www.w3.org/2000/svg" width="15" height="15" 
+                        viewBox="0 0 24 24" fill="none" stroke="#1e00ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-copy"><path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 
+                        2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 
+                        -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                    </p>
+                    <div class="color-box"></div>
+                </div>
+                <div class="color-block">
+                    <p class="color-label"><span id="color-name-three">#FFFFFF</span>
+                        <svg class="copy-icon" onclick="copyText(this)" 
+                        xmlns="http://www.w3.org/2000/svg" width="15" height="15" 
+                        viewBox="0 0 24 24" fill="none" stroke="#1e00ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-copy"><path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 
+                        2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 
+                        -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                    </p>
+                    <div class="color-box"></div>
+                </div>
+                <div class="color-block">
+                    <p class="color-label"><span id="color-name-four">#FFFFFF</span>
+                        <svg class="copy-icon" onclick="copyText(this)" 
+                        xmlns="http://www.w3.org/2000/svg" width="15" height="15" 
+                        viewBox="0 0 24 24" fill="none" stroke="#1e00ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-copy"><path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 
+                        2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 
+                        -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                    </p>
+                    <div class="color-box"></div>
+                </div>
+            </div>
+        </div>
 
     <script src="script.js"></script>
 </body>

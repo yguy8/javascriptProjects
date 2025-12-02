@@ -1,5 +1,3 @@
-// menu desplegable
-    
 // función para copiar texto al portapapeles
     function copyText(element) {
     // 'element' es el ícono SVG.
