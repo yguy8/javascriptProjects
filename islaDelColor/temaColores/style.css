@@ -13,6 +13,7 @@ body {
     background-color:var(--color-blaco);
     transition: background-color 0.5s ease;
 }
+
 /*Menú de la isla del color*/
 .menu {
     position: fixed;          /* siempre arriba */
