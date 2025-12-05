@@ -1,58 +1,85 @@
 :root{
-    --color-blaco:#ffffff;
-    --color-negro:#333;
-    --azul-boton: #007BFF;
-    --azul-boton-hover: #0056b3;
+    --pergamino:#fffefb;
+    --tesoro:#d4af37;
+    --madera:#984c4c;
+    --sangre:#8b0000;
+    --blanco:#ffffff;
+    --negro:#222;
 }
+/* Fondo general estilo pergamino */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Cinzel Decorative', serif;
+    background-color: var(--pergamino);
+    color: var(--negro);
+    margin: 0;
+}
+
+/* Menú pirata */
+.menu {
+    position: fixed;
+    top: 0;
+    width: 100%;             
+    margin: 0 auto;
+    text-align: center;
+    background-color: var(--madera);
+    border-radius: 12px;
+    padding: 12px 0;
+    z-index: 1000;
+}
+
+.menu ul {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color:var(--color-blaco);
-    transition: background-color 0.5s ease;
-}
-
-/*Menú de la isla del color*/
-.menu {
-    position: fixed;          /* siempre arriba */
-    top: 0;
-    width: 50%;             
-    justify-content: center;
-    text-align: center;
-    background-color: var(--color-blaco);
-    border-bottom: 1px solid var(--color-blaco);
-    border-radius: 10px;
-    padding: 10px 0;
-    z-index: 1000;            /* queda encima de todo */
-}
-
-/* Lista horizontal */
-.menu ul {
-    display: flex;            /* coloca los <li> en fila */
-    justify-content: center;  /* centra las opciones */
-    list-style: none;         /* quita viñetas */
+    list-style: none;
     margin: 0;
     padding: 0;
 }
 
-/* Estilo de cada opción */
 .menu li {
-  margin: 0 15px;           /* espacio entre opciones */
+    margin: 0 20px;
+    position: relative;
 }
 
+/* Icono SVG estilo pirata */
+.menu svg {
+    margin-right: 10px;
+    stroke: var(--tesoro);
+}
+
+/* Enlaces piratas */
 .menu a {
     text-decoration: none;
-    color:var(--color-negro);
-    font-weight: 500;
-    padding: 5px 10px;
-    transition: color 0.3s ease, border-bottom 0.3s ease;
+    color: var(--blanco);
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-/* Hover estilo buscador */
 .menu a:hover {
-    color: var(--azul-boton-hover);           /* cambia color */
-    border-bottom: 2px solid var(--azul-boton); /* subrayado tipo pestaña */
+    color: var(--blanco);
+    background-color: var(--sangre);
+    box-shadow: 2px 2px 0px var(--negro);
 }
 
+/* Header estilo pirata */
+header {
+    text-align: center;
+    padding: 50px 20px 40px 20px;
+    background-color: var(--madera);
+    color: var(--blanco);
+    box-shadow: inset 0 0 20px var(--negro);
+}
+
+header h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px var(--tesoro);
+    margin-bottom: 20px;
+}
+
+header p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}

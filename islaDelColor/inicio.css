@@ -13,6 +13,7 @@
     --azul-boton-hover: #0056b3;
     --pergamino:#fdf6e3;
     --tesoro:#d4af37;
+    --hover:#b8860b;
 }
 
 /* Fondo y tipografía */
@@ -58,7 +59,7 @@ button {
 }
 
 button:hover {
-    background-color:#b8860b;
+    background-color:var(--hover);
     transform: scale(1.05);
 }
 
@@ -114,6 +115,58 @@ section p {
     color: var(--azul-boton-hover);
     border-bottom: 2px solid var(--tesoro);
 }
+
+/* Estilo para la sección Mapa */
+.menu-mapa {
+    background-color: rgba(253, 246, 227, 0.8); /* pergamino translúcido */
+    border: 2px solid var(--tesoro);
+    border-radius: 12px;
+    padding: 40px 20px;
+    margin: 40px auto;
+    max-width: 600px;
+    box-shadow: 4px 4px 0px #000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-mapa:hover {
+    transform: scale(1.02);
+    box-shadow: 6px 6px 0px #000;
+}
+
+.menu-mapa h2 {
+    font-size: 2.2rem;
+    color: var(--color-negro);
+    text-shadow: 2px 2px var(--tesoro);
+    margin-bottom: 25px;
+}
+
+/* Lista de enlaces */
+.menu-mapa ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-mapa li {
+    margin: 15px 0;
+}
+
+.menu-mapa a {
+    display: block;
+    padding: 12px 20px;
+    background-color: var(--tesoro);
+    color: var(--color-blaco);
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 3px 3px 0px #000;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.menu-mapa a:hover {
+    background-color: var(--hover);
+    transform: translateY(-3px);
+}
+
 
 /*Imagen de los tesoros*/
 
