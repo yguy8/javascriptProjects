@@ -124,6 +124,14 @@ img{
     filter: brightness(1) contrast(1.2);
 }
 
+.brujula{
+    width: 10%;
+    height: 10%;
+    /*Quitar fondo a la imagen*/
+    mix-blend-mode: multiply;
+    filter: brightness(1) contrast(1.2);
+}
+
 /* Footer */
 footer {
     text-align: center;
