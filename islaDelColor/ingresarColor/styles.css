@@ -26,8 +26,9 @@ body {
     backdrop-filter: blur(2.4px) saturate(148%);
     -webkit-backdrop-filter: blur(2.4px) saturate(148%);
     text-align: center;
-    padding-top: 20px;
-    margin-top: 1rem;
+    padding: 20px;
+    padding-bottom: 0px;
+    margin: 1rem;
     border-radius: 10px;
     background-color:var(--color-blaco);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -40,6 +41,9 @@ body {
     margin-top: 20px;
 }
 
+.color-input{
+
+}
 .color-block{
     display: flex;
     flex-direction: column;
