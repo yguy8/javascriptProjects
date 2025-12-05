@@ -7,12 +7,14 @@
 
 /* Variables globales piratas */
 :root{
-    --pergamino:#fffefb;
+    --pergamino:#fdf6e3;
     --tesoro:#d4af37;
-    --madera:#984c4c;
-    --sangre:#8b0000;
+    --azul-boton: #007BFF;
+    --azul-boton-hover: #0056b3;
     --blanco:#ffffff;
     --negro:#222;
+    --sangre:#8b0000;
+    --madera:#984c4c;
 }
 
 /* Fondo y tipografía pirata */
@@ -113,46 +115,31 @@ button:hover {
 .menu {
     position: fixed;
     top: 0;
-    width: 60%;             
-    margin: 0 auto;
-    text-align: center;
-    background-color: var(--madera);
-    border-radius: 12px;
-    padding: 12px 0;
+    width: 50%;
+    background-color: var(--pergamino);
+    padding: 10px 0;
     z-index: 1000;
+    border-radius: 0 0 10px 10px;
 }
 
 .menu ul {
     display: flex;
     justify-content: center;
     list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
 .menu li {
     margin: 0 20px;
-    position: relative;
 }
 
-/* Icono SVG estilo pirata */
-.menu svg {
-    margin-right: 10px;
-    stroke: var(--tesoro);
-}
-
-/* Enlaces piratas */
 .menu a {
     text-decoration: none;
-    color: var(--blanco);
+    color: var(--color-negro);
     font-weight: 600;
-    padding: 6px 12px;
-    border-radius: 6px;
-    transition: color 0.3s ease, background-color 0.3s ease;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
 .menu a:hover {
-    color: var(--blanco);
-    background-color: var(--sangre);
-    box-shadow: 2px 2px 0px var(--negro);
+    color: var(--azul-boton-hover);
+    border-bottom: 2px solid var(--tesoro);
 }

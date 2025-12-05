@@ -20,7 +20,6 @@
 body {
     font-family: 'Cinzel Decorative', serif;
     background-color: var(--pergamino);
-    background-image: url('https://www.transparenttextures.com/patterns/aged-paper.png');
     color: var(--color-negro);
     transition: background-color 0.5s ease;
 }
@@ -88,7 +87,6 @@ section p {
     top: 0;
     width: 100%;
     background-color: var(--pergamino);
-    border-bottom: 2px dashed var(--tesoro);
     padding: 10px 0;
     z-index: 1000;
     box-shadow: 2px 2px 0px #000;
