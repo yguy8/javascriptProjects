@@ -31,6 +31,8 @@
             }
             return color;
         }
+
+        // Evento para cambiar el color de fondo y mostrar el código
         document.getElementById('color-btn').addEventListener('click', function () {
             const newColor = getRandomColor();
             document.body.style.backgroundColor = newColor; // Cambia el color de fondo

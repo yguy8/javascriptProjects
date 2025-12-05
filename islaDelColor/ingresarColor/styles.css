@@ -26,8 +26,8 @@ body {
     backdrop-filter: blur(2.4px) saturate(148%);
     -webkit-backdrop-filter: blur(2.4px) saturate(148%);
     text-align: center;
-    padding: 20px;
-    padding-bottom: 0px;
+    /* padding: top (arriba) right (derecha)  bottom (abajo) left (izquierda) en este caso el de abajo no esta para que se vea la comparación de la paleta con el color original*/
+    padding: 20px 20px 0 20px;
     margin: 1rem;
     border-radius: 10px;
     background-color:var(--color-blaco);
