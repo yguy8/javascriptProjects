@@ -1,71 +1,81 @@
-:root{
-    --color-de-fondo: #f0f8ff;
-    --link-color: #3333cc;
-    --link-hover: #5e2094;
-    --pergamino-bg: #f0dcbb;
-    --rojo-pirata: #a72545;
+/* Tipografía más acorde a pergamino/tesoro */
+body {
+    font-family: 'Cinzel Decorative', serif; /* elegante y antigua */
+    background-color: var(--color-blaco);
+    color: var(--color-negro);
+    transition: background-color 0.5s ease;
 }
-body{
-    background:linear-gradient(to bottom, rgba(30, 122, 2, 0.537), rgba(6, 81, 138, 0.97));;
-    font-family: Arial, sans-serif;
+
+/* Títulos con aire de tesoro */
+h1, h2 {
+    color: var(--color-negro);
+    text-shadow: 1px 1px var(--tesoro, #d4af37); /* brillo dorado sutil */
+    margin-bottom: 20px;
+}
+
+/* Párrafos con un toque narrativo */
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: var(--color-negro);
+}
+
+/* Botones estilo cofre dorado */
+button {
+    padding:10px 20px;
+    margin: 20px;
+    font-size: 16px;
+    color: var(--color-blaco);
+    background-color: var(--tesoro, #d4af37);
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    box-shadow: 2px 2px 0px #000; /* sombra ligera tipo mapa */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color:#b8860b;
+    transform: scale(1.05);
+}
+
+/* Menú estilo mapa del tesoro */
+.menu {
+    position: fixed;
+    top: 0;
+    width: 50%;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--color-blaco);
+    border-bottom: 2px dashed var(--tesoro, #d4af37); /* línea tipo mapa */
+    border-radius: 10px;
+    padding: 10px 0;
+    z-index: 1000;
+    box-shadow: 2px 2px 0px #000; /* sombra ligera */
+}
+
+.menu ul {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-h2{
-    text-align: center;
-    color: var(--rojo-pirata);
-}
-ul{
-    list-style-type: none;
+    list-style: none;
+    margin: 0;
     padding: 0;
 }
-li{
-    margin: 10px 0;
+
+.menu li {
+  margin: 0 15px;
 }
-a {
-    display: inline-flex;          
-    align-items: center;          
-    gap: 10px;                     
+
+.menu a {
     text-decoration: none;
-    color: var(--link-color);
+    color: var(--color-negro);
+    font-weight: 600;
+    padding: 5px 10px;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
-a:hover {
-    color: var(--link-hover);
-}
-
-a svg {
-    color: var(--rojo-pirata);
-    width: 40px;
-    height: 40px;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-a:hover svg {
-    opacity: 1;
-}
-
-.menu-mapa{
-    background-color: var(--pergamino-bg);
-    padding: 20px;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 10px 2px 10px 2px  rgb(128, 99, 5);
-}
-.mapa-icon{
-    width: 32px;
-    height: 32px;
-}
-
-.decoracion-fondo{
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    width: 200px;
-    height: 200px;
-    opacity: 0.1;
-    z-index: -1;
+.menu a:hover {
+    color: var(--azul-boton-hover);
+    border-bottom: 2px solid var(--tesoro, #d4af37);
 }
