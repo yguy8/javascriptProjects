@@ -113,4 +113,8 @@ document.getElementById('color-form').addEventListener('submit', function (e) {
     document.getElementById('color-name-two').textContent = complementaryColor;
     document.getElementById('color-name-three').textContent = triadicColors[0];
     document.getElementById('color-name-four').textContent = triadicColors[1];
+
+     //Cambiar el fondo al color ingresado
+    document.body.style.backgroundColor = baseColor;
+    document.getElementById('color-code').textContent = baseColor;
 });
