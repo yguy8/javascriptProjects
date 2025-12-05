@@ -1,37 +1,59 @@
-/* Tipografía más acorde a pergamino/tesoro */
+/* Estilos globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables globales */
+:root{
+    --color-blaco:#ffffff;
+    --color-negro:#333;
+    --azul-boton: #007BFF;
+    --azul-boton-hover: #0056b3;
+    --pergamino:#fdf6e3;
+    --tesoro:#d4af37;
+}
+
+/* Fondo y tipografía */
 body {
-    font-family: 'Cinzel Decorative', serif; /* elegante y antigua */
-    background-color: var(--color-blaco);
+    font-family: 'Cinzel Decorative', serif;
+    background-color: var(--pergamino);
+    background-image: url('https://www.transparenttextures.com/patterns/aged-paper.png');
     color: var(--color-negro);
     transition: background-color 0.5s ease;
 }
 
-/* Títulos con aire de tesoro */
-h1, h2 {
+/* Hero principal */
+#hero {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+#hero h1 {
+    font-size: 3rem;
     color: var(--color-negro);
-    text-shadow: 1px 1px var(--tesoro, #d4af37); /* brillo dorado sutil */
+    text-shadow: 2px 2px var(--tesoro);
     margin-bottom: 20px;
 }
 
-/* Párrafos con un toque narrativo */
-p {
-    font-size: 18px;
-    margin-bottom: 20px;
+#hero p {
+    font-size: 1.2rem;
     line-height: 1.6;
-    color: var(--color-negro);
+    max-width: 700px;
+    margin: 0 auto 30px auto;
 }
 
-/* Botones estilo cofre dorado */
+/* Botón principal */
 button {
-    padding:10px 20px;
-    margin: 20px;
+    padding: 12px 25px;
     font-size: 16px;
     color: var(--color-blaco);
-    background-color: var(--tesoro, #d4af37);
-    border-radius: 5px;
+    background-color: var(--tesoro);
+    border-radius: 6px;
     cursor: pointer;
     border: none;
-    box-shadow: 2px 2px 0px #000; /* sombra ligera tipo mapa */
+    box-shadow: 3px 3px 0px #000;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -40,42 +62,95 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* Menú estilo mapa del tesoro */
+/* Secciones */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--color-negro);
+    text-shadow: 1px 1px var(--tesoro);
+}
+
+section p {
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Menú superior */
 .menu {
     position: fixed;
     top: 0;
-    width: 50%;
-    justify-content: center;
-    text-align: center;
-    background-color: var(--color-blaco);
-    border-bottom: 2px dashed var(--tesoro, #d4af37); /* línea tipo mapa */
-    border-radius: 10px;
+    width: 100%;
+    background-color: var(--pergamino);
+    border-bottom: 2px dashed var(--tesoro);
     padding: 10px 0;
     z-index: 1000;
-    box-shadow: 2px 2px 0px #000; /* sombra ligera */
+    box-shadow: 2px 2px 0px #000;
 }
 
 .menu ul {
     display: flex;
     justify-content: center;
     list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
 .menu li {
-  margin: 0 15px;
+    margin: 0 20px;
 }
 
 .menu a {
     text-decoration: none;
     color: var(--color-negro);
     font-weight: 600;
-    padding: 5px 10px;
     transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
 .menu a:hover {
     color: var(--azul-boton-hover);
-    border-bottom: 2px solid var(--tesoro, #d4af37);
+    border-bottom: 2px solid var(--tesoro);
+}
+
+/* Paleta de colores (tesoros cromáticos) */
+.palette-style{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.color-block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.color-label{
+    position: absolute;
+    top: -25px;
+    font-weight: bold;
+    color: var(--color-negro);
+    text-shadow: 1px 1px var(--tesoro);
+}
+
+.color-box{
+    width: 100px; 
+    height: 100px;
+    border: 2px solid var(--tesoro);
+    border-radius: 8px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--pergamino);
+    border-top: 2px dashed var(--tesoro);
+    font-size: 0.9rem;
 }
