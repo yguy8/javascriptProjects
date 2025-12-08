@@ -25,19 +25,19 @@ body {
 }
 
 /* Hero principal */
-#hero {
+.hero {
     text-align: center;
     padding: 80px 20px;
 }
 
-#hero h1 {
+.hero h1 {
     font-size: 3rem;
     color: var(--color-negro);
     text-shadow: 2px 2px var(--tesoro);
     margin-bottom: 20px;
 }
 
-#hero p {
+.hero p {
     font-size: 1.2rem;
     line-height: 1.6;
     max-width: 700px;
