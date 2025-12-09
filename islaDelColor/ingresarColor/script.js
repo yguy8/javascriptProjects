@@ -136,21 +136,21 @@ document.getElementById('color-form').addEventListener('submit', function (e) {
         // Actualizar los colores en las cajas de la paleta
 
     const paletteBoxes = document.querySelectorAll('.color-box');
-    paletteBoxes[0].style.backgroundColor = baseColor;
-    paletteBoxes[1].style.backgroundColor = complementaryColor;
-    paletteBoxes[2].style.backgroundColor = triadicColors[0];
-    paletteBoxes[3].style.backgroundColor = triadicColors[1];
-    paletteBoxes[4].style.backgroundColor = analogousColors[0];
-    paletteBoxes[5].style.backgroundColor = tetradicColors[0];
+    paletteBoxes[0].style.backgroundColor = complementaryColor;
+    paletteBoxes[1].style.backgroundColor = triadicColors[0];
+    paletteBoxes[2].style.backgroundColor = triadicColors[1];
+    paletteBoxes[3].style.backgroundColor = analogousColors[0];
+    paletteBoxes[4].style.backgroundColor = tetradicColors[0];
+
 
      // Actualizar los nombres de los colores
 
-    document.getElementById('color-name').textContent = baseColor;
-    document.getElementById('color-name-two').textContent = complementaryColor;
-    document.getElementById('color-name-three').textContent = triadicColors[0];
-    document.getElementById('color-name-four').textContent = triadicColors[1];
-    document.getElementById('color-name-five').textContent = analogousColors[0];
-    document.getElementById('color-name-six').textContent = tetradicColors[0];
+    document.getElementById('color-name-one').textContent = complementaryColor;
+    document.getElementById('color-name-two').textContent = triadicColors[0];
+    document.getElementById('color-name-three').textContent = triadicColors[1];
+    document.getElementById('color-name-four').textContent = analogousColors[0];
+    document.getElementById('color-name-five').textContent = tetradicColors[0];
+    
 
 
      //Cambiar el fondo al color ingresado

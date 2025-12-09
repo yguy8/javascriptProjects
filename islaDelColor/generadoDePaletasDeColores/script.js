@@ -115,20 +115,51 @@
             return [triad1, triad2];
         }
 
+        // Colores análogos
+        function getAnalogousColors(hex) {
+            const r = parseInt(hex.slice(1, 3), 16);
+            const g = parseInt(hex.slice(3, 5), 16);
+            const b = parseInt(hex.slice(5, 7), 16);
+
+            const hsl = rgbToHsl(r, g, b);
+            const analog1 = hslToHex((hsl.h + 30) % 360, hsl.s, hsl.l);
+            const analog2 = hslToHex((hsl.h - 30 + 360) % 360, hsl.s, hsl.l);
+
+            return [analog1, analog2];
+        }
+
+        // Colores tetrádicos 
+        function getTetradicColors(hex) {
+            const r = parseInt(hex.slice(1, 3), 16);
+            const g = parseInt(hex.slice(3, 5), 16);
+            const b = parseInt(hex.slice(5, 7), 16);
+
+            const hsl = rgbToHsl(r, g, b);
+            const tetrad1 = hslToHex((hsl.h + 90) % 360, hsl.s, hsl.l);
+            const tetrad2 = hslToHex((hsl.h + 180) % 360, hsl.s, hsl.l);
+            const tetrad3 = hslToHex((hsl.h + 270) % 360, hsl.s, hsl.l);
+
+            return [tetrad1, tetrad2, tetrad3];
+        }
+
         // Evento para generar la paleta de colores
         document.getElementById('color-btn').addEventListener('click', function () {
             const baseColor = getRandomColor();
             const complementaryColor = getComplementaryColor(baseColor);
             const triadicColors = getTriadicColors(baseColor);
+            const analogo = getAnalogousColors(baseColor);
+            const tetradicColor = getTetradicColors(baseColor);
 
             const paletteBoxes = document.querySelectorAll('.color-box');
-            paletteBoxes[0].style.backgroundColor = baseColor;
-            paletteBoxes[1].style.backgroundColor = complementaryColor;
-            paletteBoxes[2].style.backgroundColor = triadicColors[0];
-            paletteBoxes[3].style.backgroundColor = triadicColors[1];
-            document.getElementById('color-name').textContent = baseColor; 
-            document.getElementById('color-name-two').textContent = complementaryColor;
-            document.getElementById('color-name-three').textContent = triadicColors[0];
-            document.getElementById('color-name-four').textContent = triadicColors[1];
+            paletteBoxes[0].style.backgroundColor = complementaryColor;
+            paletteBoxes[1].style.backgroundColor = triadicColors[0];
+            paletteBoxes[2].style.backgroundColor = triadicColors[1];
+            paletteBoxes[3].style.backgroundColor = analogo[0];
+            paletteBoxes[4].style.backgroundColor = tetradicColor[0];
 
+            document.getElementById('color-name-one').textContent = complementaryColor; 
+            document.getElementById('color-name-two').textContent = triadicColors[0];
+            document.getElementById('color-name-three').textContent = triadicColors[1];
+            document.getElementById('color-name-four').textContent = analogo[0];
+            document.getElementById('color-name-five').textContent = tetradicColor[0];
         });

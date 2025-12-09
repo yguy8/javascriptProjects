@@ -30,13 +30,13 @@ body {
     transition: background-color 0.5s ease;
 }
 
-/* Contenedor estilo pergamino */
+/* Contenedor blanco para que se vea los colores adecuadamente */
 .container {
     text-align: center;
     padding-top: 20px;
     margin-top: 1rem;
     border-radius: 12px;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color:var(--blanco);
 }
 
 /* Paleta */
@@ -107,7 +107,7 @@ button {
 }
 
 button:hover {
-    background-color:var(--sangre);
+    background-color:var(--madera);
     transform: scale(1.05);
 }
 
