@@ -1,3 +1,3 @@
 function irASeccion() {
-    document.getElementById("mapa").scrollIntoView({ behavior: "smooth" });
+    document.getElementById("explorar").scrollIntoView({ behavior: "smooth" });
 }
