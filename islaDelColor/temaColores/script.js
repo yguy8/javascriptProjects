@@ -12,6 +12,10 @@ const baseColors = {
   blanco: "#ffffff"
 };
 
+// Lista de temas y colores para autocompletado
+const temas = ["Neon", "Pastel", "Vibrante", "Elegante", "Clásico", "Oscuro"];
+const colores = Object.keys(baseColors); // ["rojo","naranja","amarillo",...]
+
 // Conversión RGB ↔ HSL
 function rgbToHsl(r,g,b){
   r/=255; g/=255; b/=255;
@@ -66,11 +70,11 @@ function getTetradicColors(hex){
 // Ajuste por tema
 function adjustByTheme(hex,tema){
   let {h,s,l}=hexToHsl(hex);
-  if(tema==="pastel"){
-    s=0.4; l=0.8; // colores suaves y claros
-  } else if(tema==="vibrante"){
+  if(tema.toLowerCase()==="pastel"){
+    s=0.4; l=0.8;
+  } else if(tema.toLowerCase()==="vibrante"){
     s=1; l=0.5;
-  } else if(tema==="oscuro"){
+  } else if(tema.toLowerCase()==="oscuro"){
     s=0.6; l=0.2;
   }
   return hslToHex(h,s,l);
@@ -78,27 +82,21 @@ function adjustByTheme(hex,tema){
 
 // Generar paleta
 function generateThemePalette(){
-  const tema=document.getElementById("tema").value;
-  const colorBase=document.getElementById("colorBase").value;
+  const tema=document.getElementById("tema").value.toLowerCase();
+  const colorBase=document.getElementById("colorBase").value.toLowerCase();
   const baseHex=baseColors[colorBase];
 
+  if(!baseHex){
+    alert("Selecciona un color base válido.");
+    return;
+  }
+
   let palette=[];
-  // Base ajustado
   palette.push(adjustByTheme(baseHex,tema));
 
-  // Pastel usa tetrádica
-  if(tema==="pastel"){
-    const tetradic=getTetradicColors(baseHex);
-    tetradic.forEach(c=>palette.push(adjustByTheme(c,tema)));
-  }
+  const tetradic=getTetradicColors(baseHex);
+  tetradic.forEach(c=>palette.push(adjustByTheme(c,tema)));
 
-  // Vibrante y oscuro también pueden usar tetrádica si quieres
-  if(tema==="vibrante" || tema==="oscuro"){
-    const tetradic=getTetradicColors(baseHex);
-    tetradic.forEach(c=>palette.push(adjustByTheme(c,tema)));
-  }
-
-  // Mostrar en pantalla
   const container=document.getElementById("paletteContainer");
   container.innerHTML="";
   palette.forEach(color=>{
@@ -120,3 +118,30 @@ function generateThemePalette(){
     container.appendChild(card);
   });
 }
+
+// --- Autocompletado ---
+function setupAutocomplete(inputId, suggestionsId, dataList) {
+  const input = document.getElementById(inputId);
+  const suggestions = document.getElementById(suggestionsId);
+
+  input.addEventListener("input", () => {
+    const query = input.value.toLowerCase();
+    suggestions.innerHTML = "";
+    if (query) {
+      const filtered = dataList.filter(item => item.toLowerCase().includes(query));
+      filtered.forEach(item => {
+        const div = document.createElement("div");
+        div.textContent = item;
+        div.addEventListener("click", () => {
+          input.value = item;
+          suggestions.innerHTML = "";
+        });
+        suggestions.appendChild(div);
+      });
+    }
+  });
+}
+
+// Inicializar autocompletado para tema y color
+setupAutocomplete("tema","tema-suggestions",temas);
+setupAutocomplete("colorBase","color-suggestions",colores);
