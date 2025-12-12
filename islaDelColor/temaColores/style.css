@@ -41,20 +41,17 @@ header p {
 .menu {
     position: fixed;
     top: 0;
-    width: 100%;
+    width: 90%;
     background-color: var(--pergamino);
     padding: 10px 0;
     z-index: 1000;
     border-radius: 0 0 10px 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
 }
 
 .menu ul {
     display: flex;
     justify-content: center;
     list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
 .menu li {
@@ -63,7 +60,7 @@ header p {
 
 .menu a {
     text-decoration: none;
-    color: var(--negro);
+    color: var(--color-negro);
     font-weight: 600;
     transition: color 0.3s ease, border-bottom 0.3s ease;
 }
@@ -73,6 +70,7 @@ header p {
     border-bottom: 2px solid var(--tesoro);
 }
 
+
 /* Formulario */
 .form-container {
     text-align: center;
@@ -80,8 +78,7 @@ header p {
 }
 
 /* Botones estilo pirata */
-/* Botones estilo pirata */
-.buscar {
+.generar {
     background: var(--sangre);
     color: var(--blanco);
     border: 2px solid var(--tesoro);
@@ -94,7 +91,7 @@ header p {
     transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.buscar:hover {
+.generar:hover {
     background: var(--madera);
     transform: scale(1.05);
 }
@@ -122,16 +119,28 @@ header p {
 /* Contenedor de paletas */
 #paletteContainer {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column; /* ahora cada grupo se apila */
+    align-items: center;
     margin-top: 40px;
+    gap: 30px; /* espacio entre grupos */
+}
+
+/* Grupo de paleta */
+.palette-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px;
+    background: var(--pergamino);
+    border: 2px dashed var(--madera);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
 /* Tarjetas de color estilo pergamino */
 .color-card {
     width: 120px;
     height: 120px;
-    margin: 15px;
     border-radius: 10px;
     position: relative;
     box-shadow: 0 4px 8px rgba(0,0,0,0.4);
@@ -171,3 +180,40 @@ header p {
     background: var(--madera);
 }
 
+/* Select estilo pirata */
+#tema {
+    background: var(--pergamino);
+    color: var(--negro);
+    border: 2px solid var(--tesoro);
+    border-radius: 8px;
+    padding: 10px 40px 10px 15px; /* espacio extra a la derecha para la flecha */
+    font-family: 'Cinzel Decorative', serif;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 15px 0;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+    appearance: none; /* quita estilo por defecto */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: linear-gradient(to right, var(--pergamino), #f9f3d8);
+
+    /* flecha personalizada */
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%23d4af37' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+}
+
+#tema:hover, #tema:focus {
+    border-color: var(--madera);
+    outline: none;
+}
+
+#tema option {
+    background: var(--pergamino);
+    color: var(--negro);
+    font-family: 'Cinzel Decorative', serif;
+    padding: 10px;
+}

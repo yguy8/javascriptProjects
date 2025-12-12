@@ -25,27 +25,20 @@
         <p>Selecciona un tema para ver una paleta de colores relacionada.</p>
     </header>    
 
-    <!-- Formulario -->
-    <div class="form-container">
-        <h2>Configura tu paleta pirata</h2>
-        <label for="tema">Tema:</label>
-        <select id="tema">
-            <option value="Analogo">Análogo</option>
-            <option value="Complementario">Complementario</option>
-            <option value="Triadico">Tríadico</option>
-            <option value="Tetradico">Tetrádico</option>
-        </select>
+   <label for="tema">Tema:</label>
+<select id="tema">
+    <option value="Aventura">Aventura</option>
+    <option value="Diversion">Diversión</option>
+    <option value="Calma">Calma</option>
+    <option value="Accion">Acción</option>
+    <option value="Futurista">Futurista</option>
+</select>
 
-        <form id="color-form">
-            <label for="color-input">Ingresa un color:</label>
-            <input type="color" id="color-picker" value="#FFFFFF">
-            <input type="text" id="color-input" value="#FFFFFF">
-            <button type="button" class="buscar" onclick="generateThemePalette()">Generar Paleta</button>
-        </form>
-    </div>
+<button class="generar" type="button" onclick="generateThemePalette()">Generar Paletas</button>
 
-    <!-- Contenedor de paletas -->
-    <div id="paletteContainer"></div>
+<!-- Contenedor donde se pintan -->
+<div id="paletteContainer"></div>
+
 
     <script src="script.js"></script>
 </body>
