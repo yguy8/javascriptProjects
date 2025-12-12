@@ -41,7 +41,7 @@ header p {
 .menu {
     position: fixed;
     top: 0;
-    width: 50%;
+    width: 100%;
     background-color: var(--pergamino);
     padding: 10px 0;
     z-index: 1000;
@@ -73,9 +73,13 @@ header p {
     border-bottom: 2px solid var(--tesoro);
 }
 
+/* Formulario */
+.form-container {
+    text-align: center;
+    margin-top: 100px;
+}
 
-
-
+/* Botones estilo pirata */
 /* Botones estilo pirata */
 .buscar {
     background: var(--sangre);
@@ -95,12 +99,32 @@ header p {
     transform: scale(1.05);
 }
 
+/* Variante para el botón de copiar paleta completa */
+.buscar.copy-all {
+    background: var(--sangre);
+    border-color: var(--tesoro);
+    width: auto;
+    height: 50px;
+    padding: 10px ;
+    cursor: pointer;
+    margin: 50px 10px;
+    border-radius: 8px;
+    font-family: 'Cinzel Decorative', serif;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.buscar.copy-all:hover {
+    background: var(--madera);
+    transform: scale(1.05);
+}
+
 /* Contenedor de paletas */
 #paletteContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 80px; /* espacio por el menú fijo */
+    margin-top: 40px;
 }
 
 /* Tarjetas de color estilo pergamino */
@@ -125,7 +149,6 @@ header p {
     color: var(--negro);
     padding: 3px 6px;
     border-radius: 5px;
-    border: 1px solid var(--tesoro);
 }
 
 /* Botón de eliminar estilo sello pirata */
@@ -141,6 +164,7 @@ header p {
     cursor: pointer;
     font-weight: bold;
     transition: background 0.3s ease;
+    border: none;
 }
 
 .remove-btn:hover {
