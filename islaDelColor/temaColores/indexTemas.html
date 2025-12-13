@@ -7,9 +7,9 @@
     <link rel="icon" href="https://gd7distribuidor.com.br/wp-content/uploads/2020/01/gd7_cores_destaque.jpg" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<main>
 
-    <!-- Menú pirata -->
+    <!--Menú -->
     <nav class="menu">
         <ul>
             <li><a href="../inicio.html">Mapa</a></li>
@@ -19,27 +19,27 @@
         </ul>
     </nav>
 
-    <!-- Encabezado -->
-    <header>
-        <h1>Colores por tema</h1>
-        <p>Selecciona un tema para ver una paleta de colores relacionada.</p>
-    </header>    
+    <!-- Contenido principal -->
+<header>
+    <h1>🎨 Generador de Paletas</h1>
+    <p>Ingresa un tema y crea tus paletas personalizadas</p>
+</header>
 
-   <label for="tema">Tema:</label>
-<select id="tema">
-    <option value="Aventura">Aventura</option>
-    <option value="Diversion">Diversión</option>
-    <option value="Calma">Calma</option>
-    <option value="Accion">Acción</option>
-    <option value="Futurista">Futurista</option>
-</select>
+<main>
+    <div class="form-container">
+        <input type="text" id="tema" placeholder="Escribe un tema...">
+        <button class="generar" onclick="generateThemePalette()">Generar Paletas</button>
+    </div>
 
-<button class="generar" type="button" onclick="generateThemePalette()">Generar Paletas</button>
+    <div id="specsContainer">
+        <h3>Color especifico:</h3>
+        <input type="text" id="specInput" placeholder="Añadir color especifico...">
+        <button class="generar" onclick="addSpec()">Añadir</button>
+        <div id="specList"></div>
+    </div>
 
-<!-- Contenedor donde se pintan -->
-<div id="paletteContainer"></div>
-
-
-    <script src="script.js"></script>
+    <div id="paletteContainer"></div>
+</main>
+<script src="script.js"></script>
 </body>
 </html>

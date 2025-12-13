@@ -75,7 +75,15 @@ header h1 {
     text-align: center;
     margin: 20px 0;
 }
-
+ /*input del formulario*/
+input{
+    padding: 10px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    cursor:text;
+}
+/*boton de generar paleta*/
 .generar {
     background: var(--sangre);
     color: var(--blanco);
@@ -192,6 +200,8 @@ header h1 {
 .copy-btn {
     background: var(--sangre);
     border-color: var(--tesoro);
+    bottom: 10px;              
+    left: 50%;                 
     width: auto;
     height: 50px;
     padding: 10px ;
