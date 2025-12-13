@@ -1,15 +1,21 @@
-:root {
+/* Estilos globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Variables globales colores */
+:root{
+    --pergamino:#fdf6e3;
     --tesoro:#d4af37;
-    --madera:#984c4c;
-    --sangre:#8b0000;
     --blanco:#ffffff;
     --negro:#222;
-    --azul-boton:#007BFF;
-    --azul-boton-hover:#0056b3;
-    --pergamino:#fdf6e3;
+    --azul-boton: #007BFF;
+    --azul-boton-hover: #0056b3;
+    --sangre:#8b0000;
+    --madera:#984c4c;
 }
-
-/* Fondo general estilo pergamino */
+/* Fondo general */
 body {
     font-family: 'Cinzel Decorative', serif;
     background-color: var(--pergamino);
@@ -18,30 +24,24 @@ body {
     padding: 20px;
 }
 
-/* Header estilo pirata */
+/* Header */
 header {
     text-align: center;
-    padding: 50px 20px 40px 20px;
+    padding: 30px;
     background-color: var(--sangre);
     color: var(--blanco);
     box-shadow: inset 0 0 20px var(--negro);
 }
 
 header h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     text-shadow: 2px 2px var(--tesoro);
-    margin-bottom: 20px;
 }
-
-header p {
-    font-size: 1.2rem;
-}
-
-/* Menú pirata */
+/* Menú */
 .menu {
     position: fixed;
     top: 0;
-    width: 90%;
+    width: 50%;
     background-color: var(--pergamino);
     padding: 10px 0;
     z-index: 1000;
@@ -70,64 +70,77 @@ header p {
     border-bottom: 2px solid var(--tesoro);
 }
 
-
 /* Formulario */
 .form-container {
     text-align: center;
-    margin-top: 100px;
+    margin: 20px 0;
 }
 
-/* Botones estilo pirata */
 .generar {
     background: var(--sangre);
     color: var(--blanco);
     border: 2px solid var(--tesoro);
     padding: 10px 20px;
     cursor: pointer;
-    margin: 10px;
     border-radius: 8px;
-    font-family: 'Cinzel Decorative', serif;
     font-weight: bold;
     transition: background 0.3s ease, transform 0.2s ease;
 }
-
 .generar:hover {
     background: var(--madera);
     transform: scale(1.05);
 }
 
-/* Variante para el botón de copiar paleta completa */
-.buscar.copy-all {
-    background: var(--sangre);
-    border-color: var(--tesoro);
-    width: auto;
-    height: 50px;
-    padding: 10px ;
+/* Especificaciones */
+#specsContainer {
+    text-align: center;
+    margin: 20px 0;
+}
+#specList {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+.spec-btn {
+    background: var(--tesoro);
+    color: var(--negro);
+    border-radius: 20px;
+    padding: 5px 10px;
     cursor: pointer;
-    margin: 50px 10px;
-    border-radius: 8px;
-    font-family: 'Cinzel Decorative', serif;
-    font-weight: bold;
-    transition: background 0.3s ease, transform 0.2s ease;
+    position: relative;
+}
+.spec-btn span {
+    margin-right: 8px;
+}
+.spec-btn .remove-spec {
+    background: var(--sangre);
+    color: var(--blanco);
+    border: none;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 18px;
+    position: absolute;
+    top: -5px;
+    right: -5px;
 }
 
-.buscar.copy-all:hover {
-    background: var(--madera);
-    transform: scale(1.05);
-}
-
-/* Contenedor de paletas */
+/* Paletas */
 #paletteContainer {
     display: flex;
-    flex-direction: column; /* ahora cada grupo se apila */
+    flex-direction: column;
     align-items: center;
-    margin-top: 40px;
-    gap: 30px; /* espacio entre grupos */
+    gap: 30px;
+    margin-top: 20px;
 }
-
-/* Grupo de paleta */
 .palette-group {
+    position: relative;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
     padding: 15px;
@@ -136,8 +149,6 @@ header p {
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
-
-/* Tarjetas de color estilo pergamino */
 .color-card {
     width: 120px;
     height: 120px;
@@ -145,75 +156,54 @@ header p {
     position: relative;
     box-shadow: 0 4px 8px rgba(0,0,0,0.4);
     border: 2px solid var(--madera);
-    overflow: hidden;
 }
-
-/* Nombre del color con estética etiqueta */
 .color-name {
     position: absolute;
     bottom: 5px;
     left: 5px;
     font-size: 12px;
     background: var(--pergamino);
-    color: var(--negro);
     padding: 3px 6px;
     border-radius: 5px;
 }
-
-/* Botón de eliminar estilo sello pirata */
+.copy-color-btn {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    border: none;
+    background: var(--pergamino);
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 5px;
+}
 .remove-btn {
     position: absolute;
-    top: 2px;
-    right: 2px;
+    top: 5px;
+    right: 5px;
     background: var(--sangre);
     color: var(--blanco);
     border-radius: 50%;
     width: 30px;
     height: 30px;
     cursor: pointer;
-    font-weight: bold;
-    transition: background 0.3s ease;
     border: none;
+    font-weight: bold;
 }
-
-.remove-btn:hover {
-    background: var(--madera);
-}
-
-/* Select estilo pirata */
-#tema {
-    background: var(--pergamino);
-    color: var(--negro);
-    border: 2px solid var(--tesoro);
+.copy-btn {
+    background: var(--sangre);
+    border-color: var(--tesoro);
+    width: auto;
+    height: 50px;
+    padding: 10px ;
+    cursor: pointer;
+    margin: 50px 10px;
     border-radius: 8px;
-    padding: 10px 40px 10px 15px; /* espacio extra a la derecha para la flecha */
+    color: var(--blanco);
     font-family: 'Cinzel Decorative', serif;
     font-weight: bold;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin: 15px 0;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.3);
-    appearance: none; /* quita estilo por defecto */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background-image: linear-gradient(to right, var(--pergamino), #f9f3d8);
-
-    /* flecha personalizada */
-    background-image: url("data:image/svg+xml;utf8,<svg fill='%23d4af37' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    background-size: 20px;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
-
-#tema:hover, #tema:focus {
-    border-color: var(--madera);
-    outline: none;
-}
-
-#tema option {
-    background: var(--pergamino);
-    color: var(--negro);
-    font-family: 'Cinzel Decorative', serif;
-    padding: 10px;
+.copy-btn:hover {
+    background: var(--madera);
+    transform: scale(1.05);
 }
