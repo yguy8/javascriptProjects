@@ -75,7 +75,7 @@ header h1 {
     text-align: center;
     margin: 20px 0;
 }
- /*input del formulario*/
+/*input del formulario*/
 input{
     padding: 10px 20px;
     margin: 8px 0;
@@ -83,6 +83,7 @@ input{
     border-radius: 5px;
     cursor:text;
 }
+
 /*boton de generar paleta*/
 .generar {
     background: var(--sangre);
@@ -136,6 +137,18 @@ input{
     top: -5px;
     right: -5px;
 }
+
+/*circulo de que muestra el color que puso el usuario*/
+.color-swatch, .spec-swatch {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-right: 6px;
+    border: 1px solid #00000033;
+    vertical-align: middle;
+}
+
 
 /* Paletas */
 #paletteContainer {
@@ -223,8 +236,8 @@ input{
     visibility: hidden;
     min-width: 250px;
     margin-left: -125px;
-    background-color: var(--madera);
-    color: var(--blanco);
+    background-color: var(--azul-boton-hover);
+    color: var(--pergamino);
     text-align: center;
     border-radius: 8px;
     padding: 12px;

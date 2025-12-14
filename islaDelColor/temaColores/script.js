@@ -1,15 +1,17 @@
-// Generar colores aleatorios hex
-function randomColor() {
-  return "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0");
-}
+    // Generar colores aleatorios hex
+    function randomColor() {
+    return "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0");
+    }
 
-// Valida si un valor es un color CSS válido
-function isValidCssColor(value) {
- 
-}
+    // Valida si un valor es un color CSS válido
+    function isValidCssColor(value) {
+    const s = new Option().style;
+    s.color = value;
+    return s.color !== "";
+    }
 
-// Normaliza el color ingresado (soporta español, hex, rgb/hsl)
-function normalizeUserColor(value) {
+    // Normaliza el color ingresado (soporta español, hex, rgb/hsl)
+    function normalizeUserColor(value) {
     let v = value.trim().toLowerCase();
 
     const map = {
@@ -92,7 +94,7 @@ function normalizeUserColor(value) {
     const container = document.getElementById("paletteContainer");
 
     if (!tema) {
-        showToast("⚠ Por favor ingresa un tema para comenzar");
+        showToast("Por favor ingresa un tema para comenzar");
         return;
     }
 
@@ -119,10 +121,10 @@ function normalizeUserColor(value) {
         card.className = "color-card";
         card.style.backgroundColor = colorObj.normalized;
         card.innerHTML = `
+            <span class="color-swatch" style="background:${colorObj.normalized}"></span>
             <span class="color-name">${colorObj.raw}</span>
             <button onclick="copyText(this)" class="copy-color-btn">
-            <svg class="copy-icon" onclick="copyText(this)" 
-            xmlns="http://www.w3.org/2000/svg" width="15" height="15" 
+            <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" 
             viewBox="0 0 24 24" fill="none" stroke="#1e00ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
             class="icon icon-tabler icons-tabler-outline icon-tabler-copy"><path stroke="none" d="M0 0h24v24H0z" fill="none"/>
             <path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 
@@ -151,7 +153,7 @@ function normalizeUserColor(value) {
 
     const normalized = normalizeUserColor(raw);
     if (!normalized) {
-        showToast("⚠ Color no válido. Usa nombres (negro, azul), hex (#000000), rgb(0,0,0) o hsl(0,0%,0%).");
+        showToast("Color no válido. Usa nombres (negro, azul), hex (#000000), rgb(0,0,0) o hsl(0,0%,0%).");
         return;
     }
 
