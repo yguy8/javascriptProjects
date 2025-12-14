@@ -46,6 +46,9 @@ header h1 {
     padding: 10px 0;
     z-index: 1000;
     border-radius: 0 0 10px 10px;
+    /*aliniación al centro provisional*/
+    right: 25%;
+    left: 25%;
 }
 
 .menu ul {
@@ -139,7 +142,7 @@ input{
 }
 
 /*circulo de que muestra el color que puso el usuario*/
-.color-swatch, .spec-swatch {
+.spec-swatch {
     display: inline-block;
     width: 16px;
     height: 16px;
@@ -182,10 +185,11 @@ input{
     position: absolute;
     bottom: 5px;
     left: 5px;
-    font-size: 12px;
+    font-size: 15px;
     background: var(--pergamino);
     padding: 3px 6px;
     border-radius: 5px;
+    font-weight: bold;
 }
 .copy-color-btn {
     position: absolute;
@@ -197,6 +201,11 @@ input{
     padding: 4px;
     border-radius: 5px;
 }
+
+.copy-color-btn:hover {
+    background: var(--blanco);
+}
+
 .remove-btn {
     position: absolute;
     top: 5px;
@@ -209,17 +218,17 @@ input{
     cursor: pointer;
     border: none;
     font-weight: bold;
+    margin: 7px;
 }
 .copy-btn {
     background: var(--sangre);
     border-color: var(--tesoro);
     bottom: 10px;              
     left: 50%;                 
-    width: auto;
-    height: 50px;
+    width: 70%;
+    height: 35px;
     padding: 10px ;
     cursor: pointer;
-    margin: 40px 10px;
     border-radius: 8px;
     color: var(--blanco);
     font-family: 'Cinzel Decorative', serif;
@@ -256,3 +265,6 @@ input{
     visibility: visible;
     opacity: 1;
 }
+
+
+/*media queries para cualquier dispositivo*/
