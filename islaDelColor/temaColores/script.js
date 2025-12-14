@@ -1,17 +1,17 @@
-    // Generar colores aleatorios hex
-    function randomColor() {
+// Generar colores aleatorios hex
+function randomColor() {
     return "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0");
-    }
+}
 
-    // Valida si un valor es un color CSS válido
-    function isValidCssColor(value) {
+// Valida si un valor es un color CSS válido
+function isValidCssColor(value) {
     const s = new Option().style;
     s.color = value;
     return s.color !== "";
-    }
+}
 
-    // Normaliza el color ingresado (soporta español, hex, rgb/hsl)
-    function normalizeUserColor(value) {
+// Normaliza el color ingresado (soporta español, hex, rgb/hsl)
+function normalizeUserColor(value) {
     let v = value.trim().toLowerCase();
 
     const map = {
@@ -47,18 +47,18 @@
     if (isValidCssColor(v)) return v;
 
     return null;
-    }
+}
 
-    // Mostrar toast
-    function showToast(msg) {
+// Mostrar toast
+function showToast(msg) {
     const toast = document.getElementById("toast");
     toast.innerText = msg;
     toast.classList.add("show");
     setTimeout(() => toast.classList.remove("show"), 3000);
-    }
+}
 
-    // Copiar color individual
-    function copyText(element) {
+// Copiar color individual
+function copyText(element) {
     const parent = element.parentElement;
     const textSpan = parent.querySelector(".color-name");
     const originalText = textSpan.innerText;
@@ -66,10 +66,10 @@
         textSpan.innerText = "¡Copiado!";
         setTimeout(() => (textSpan.innerText = originalText), 1500);
     });
-    }
+}
 
-    // Copiar toda la paleta
-    function copyPalette(button) {
+// Copiar toda la paleta
+function copyPalette(button) {
     const group = button.closest(".palette-group");
     const colors = [...group.querySelectorAll(".color-name")].map((span) => span.innerText);
     const paletteText = colors.join(", ");
@@ -77,19 +77,19 @@
         button.innerText = "¡Paleta copiada!";
         setTimeout(() => (button.innerText = "Copiar paleta"), 1500);
     });
-    }
+}
 
-    // Eliminar paleta
-    function deletePalette(button) {
+// Eliminar paleta
+function deletePalette(button) {
     const group = button.closest(".palette-group");
     group.remove();
-    }
+}
 
-    // Lista de colores añadidos por el usuario
-    let userColors = [];
+// Lista de colores añadidos por el usuario
+let userColors = [];
 
-    // Generar paletas
-    function generateThemePalette() {
+// Generar paletas
+function generateThemePalette() {
     const tema = document.getElementById("tema").value.trim();
     const container = document.getElementById("paletteContainer");
 
@@ -107,46 +107,48 @@
         const deleteBtn = document.createElement("button");
         deleteBtn.innerText = "✖";
         deleteBtn.className = "remove-btn";
+        deleteBtn.setAttribute("aria-label", "Eliminar paleta");
         deleteBtn.onclick = () => deletePalette(deleteBtn);
         group.appendChild(deleteBtn);
 
         const paletteColors = [...userColors];
         while (paletteColors.length < 4) {
-        const rand = randomColor();
-        paletteColors.push({ raw: rand, normalized: rand });
+            const rand = randomColor();
+            paletteColors.push({ raw: rand, normalized: rand });
         }
 
         paletteColors.forEach((colorObj) => {
-        const card = document.createElement("div");
-        card.className = "color-card";
-        card.style.backgroundColor = colorObj.normalized;
-        card.innerHTML = `
-            <span class="color-swatch" style="background:${colorObj.normalized}"></span>
-            <span class="color-name">${colorObj.raw}</span>
-            <button onclick="copyText(this)" class="copy-color-btn">
-            <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" 
-            viewBox="0 0 24 24" fill="none" stroke="#1e00ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="icon icon-tabler icons-tabler-outline icon-tabler-copy"><path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-            <path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 
-            2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 
-            -2h10c.75 0 1.158 .385 1.5 1" /></svg> 
-            </button>
-        `;
-        group.appendChild(card);
+            const card = document.createElement("div");
+            card.className = "color-card";
+            card.style.backgroundColor = colorObj.normalized;
+            card.innerHTML = `
+                <span class="color-swatch" style="background:${colorObj.normalized}"></span>
+                <span class="color-name">${colorObj.raw}</span>
+                <button onclick="copyText(this)" class="copy-color-btn" aria-label="Copiar color">
+                    <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" 
+                    viewBox="0 0 24 24" fill="none" stroke="#1e00ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-copy"><path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 
+                    2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 
+                    -2h10c.75 0 1.158 .385 1.5 1" /></svg> 
+                </button>
+            `;
+            group.appendChild(card);
         });
 
         const copyBtn = document.createElement("button");
         copyBtn.innerText = "Copiar paleta";
         copyBtn.className = "copy-btn";
+        copyBtn.setAttribute("aria-label", "Copiar paleta completa");
         copyBtn.onclick = () => copyPalette(copyBtn);
         group.appendChild(copyBtn);
 
         container.appendChild(group);
     }
-    }
+}
 
-    // Añadir color específico
-    function addSpec() {
+// Añadir color específico
+function addSpec() {
     const input = document.getElementById("specInput");
     const raw = input.value.trim();
     if (!raw) return;
@@ -154,6 +156,13 @@
     const normalized = normalizeUserColor(raw);
     if (!normalized) {
         showToast("Color no válido. Usa nombres (negro, azul), hex (#000000), rgb(0,0,0) o hsl(0,0%,0%).");
+        return;
+    }
+
+    // Evitar duplicados
+    if (userColors.some(c => c.raw.toLowerCase() === raw.toLowerCase())) {
+        showToast("Ese color ya fue agregado");
+        input.value = "";
         return;
     }
 
@@ -173,8 +182,9 @@
     const removeBtn = document.createElement("button");
     removeBtn.innerText = "✖";
     removeBtn.className = "remove-spec";
+    removeBtn.setAttribute("aria-label", "Eliminar color específico");
     removeBtn.onclick = () => {
-        userColors = userColors.filter((c) => c.raw !== raw);
+        userColors = userColors.filter((c) => c.raw.toLowerCase() !== raw.toLowerCase());
         specBtn.remove();
     };
 
@@ -184,4 +194,19 @@
     specList.appendChild(specBtn);
 
     input.value = "";
+}
+
+// Detectar Enter en los inputs
+document.getElementById("tema").addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        generateThemePalette();
     }
+});
+
+document.getElementById("specInput").addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        addSpec();
+    }
+});
