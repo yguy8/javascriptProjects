@@ -5,10 +5,6 @@
     const textSpan = parent.querySelector("span"); // Buscamos el span que contiene el texto DENTRO de ese padre
     const originalText = textSpan.innerText; //Obtenemos el texto original
     navigator.clipboard.writeText(originalText).then(() => {  // Copiamos al portapapeles
-        
-        // Cambiamos el color del ícono (element es el SVG)
-        element.style.stroke = "#06b109"; // verde
-
         // Cambiamos el texto del span
         textSpan.innerText = "¡Copiado!";
 
