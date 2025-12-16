@@ -4,10 +4,9 @@ function copyText(element) {
     const textSpan = parent.querySelector("span");
     const originalText = textSpan.innerText;
     navigator.clipboard.writeText(originalText).then(() => {
-        element.style.stroke = "#06b109"; // verde
         textSpan.innerText = "¡Copiado!";
         setTimeout(() => {
-            element.style.stroke = "#1e00ff"; // azul original
+            element.style.stroke = "#1e00ff"; // azul 
             textSpan.innerText = originalText;
         }, 1500);
     }).catch(err => {
@@ -15,25 +14,13 @@ function copyText(element) {
     });
 }
 
-// Función para obtener el color complementario
-function getComplementaryColor(hex) {
-    const r = parseInt(hex.slice(1, 3), 16);
-    const g = parseInt(hex.slice(3, 5), 16);
-    const b = parseInt(hex.slice(5, 7), 16);
-
-    const compR = (255 - r).toString(16).padStart(2, '0');
-    const compG = (255 - g).toString(16).padStart(2, '0');
-    const compB = (255 - b).toString(16).padStart(2, '0');
-
-    return `#${compR}${compG}${compB}`;
-}
 
 // Conversión RGB → HSL
 function rgbToHsl(r, g, b) {
     r /= 255; g /= 255; b /= 255;
     const max = Math.max(r, g, b), min = Math.min(r, g, b);
     let h, s, l = (max + min) / 2;
-
+    
     if (max === min) {
         h = s = 0;
     } else {
@@ -63,12 +50,25 @@ function hslToHex(h, s, l) {
     else if (h < 240)[r, g, b] = [0, x, c];
     else if (h < 300)[r, g, b] = [x, 0, c];
     else             [r, g, b] = [c, 0, x];
-
+    
     r = Math.round((r + m) * 255).toString(16).padStart(2, '0');
     g = Math.round((g + m) * 255).toString(16).padStart(2, '0');
     b = Math.round((b + m) * 255).toString(16).padStart(2, '0');
-
+    
     return `#${r}${g}${b}`;
+}
+
+// Función para obtener el color complementario
+function getComplementaryColor(hex) {
+    const r = parseInt(hex.slice(1, 3), 16);
+    const g = parseInt(hex.slice(3, 5), 16);
+    const b = parseInt(hex.slice(5, 7), 16);
+
+    const compR = (255 - r).toString(16).padStart(2, '0');
+    const compG = (255 - g).toString(16).padStart(2, '0');
+    const compB = (255 - b).toString(16).padStart(2, '0');
+
+    return `#${compR}${compG}${compB}`;
 }
 
 // Colores análogos
