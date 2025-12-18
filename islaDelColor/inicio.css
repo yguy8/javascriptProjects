@@ -197,13 +197,15 @@ img{
 /* Estilo de cada carta  y su contenido */
 h3{
     font-size: 1rem;
-    color: var(--color-negro);
+    color: var(--color-blaco);
 }
 
 .card {
     width: 180px;
     height: 120px;
-    background: #f0f0f0;
+    background-image: url(https://png.pngtree.com/thumb_back/fw800/background/20231004/pngtree-closed-pirate-treasure-chest-stunning-3d-render-image_13578954.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     border: 2px solid #333;
     border-radius: 10px;
     display: flex;
@@ -212,10 +214,13 @@ h3{
     cursor: pointer;
     transition: transform 0.3s, background 0.3s;
     text-align: center;
+    color: var(--color-blaco);
 }
 .card:hover {
     transform: scale(1.05);
-    background: #ddd;
+    background-image: url(https://thumbs.dreamstime.com/b/cofre-del-tesoro-lleno-de-riquezas-y-joyas-rebosante-creadas-con-ai-generativo-274422108.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /* Modal base */
@@ -231,7 +236,7 @@ h3{
 
 /* Contenido del modal */
 .modal-content {
-    background: #fff;
+    background:var(--pergamino);
     margin: 10% auto;
     padding: 20px;
     border-radius: 10px;
@@ -250,7 +255,8 @@ h3{
 .close {
     color: #333;
     float: right;
-    font-size: 28px;
+    margin-top: -20px;
+    font-size: 50px;
     font-weight: bold;
     cursor: pointer;
 }
