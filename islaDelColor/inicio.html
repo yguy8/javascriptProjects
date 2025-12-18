@@ -20,6 +20,7 @@
         <li><a href="#historia">Leyenda</a></li>
         <li><a href="#explorar">Explorar</a></li>
         <li><a href="#tesoros">Tesoros</a></li>
+        <li><a href="#info">Acerca de</a></li>
         </ul>
     </header>
 
@@ -67,18 +68,30 @@
             Y si te sientes aventurero, <b>el generador de paletas al azar</b> te llevará a explorar combinaciones inesperadas y únicas.
         </p>
     </section>
-
+    
     <!-- Sección de tesoros -->
     <section id="tesoros">
         <h2>Guía de tesoros</h2>
-        <p> Aqui encontrarás información sobre la teoría del color y cómo combinar colores de manera efectiva para tus proyectos.
-
-        </p>
+        <p> Aqui encontrarás información sobre la teoría del color y cómo combinar colores de manera efectiva para tus proyectos.</p>
         <img src="https://i.pinimg.com/originals/6f/17/81/6f1781ab35ac1575104b9cb459b38aea.png" alt="Teoria del color">
+    
+    <div class="cards"> 
+        <!-- Complementario --> <div class="card" onclick="openModal('modalComplementario')"> <h3>Complementario</h3> </div>
+        <!-- Análogo --> <div class="card" onclick="openModal('modalAnalogo')"> <h3>Análogo</h3> </div> 
+        <!-- Triádico --> <div class="card" onclick="openModal('modalTriadico')"> <h3>Triádico</h3> </div> 
+        <!-- Tetrádico --><div class="card" onclick="openModal('modalTetradico')"> <h3>Tetrádico</h3> </div> 
+    </div>
     </section>
 
+    <!-- Modales -->
+    <div id="modalComplementario" class="modal"> <div class="modal-content"> <span class="close" onclick="closeModal('modalComplementario')">&times;</span> <h2>Complementario</h2> <p>Los colores complementarios son aquellos que se encuentran en posiciones opuestas dentro de la rueda de colores.</p> </div> </div> 
+    <div id="modalAnalogo" class="modal"> <div class="modal-content"> <span class="close" onclick="closeModal('modalAnalogo')">&times;</span> <h2>Análogo</h2> <p>Los colores análogos son aquellos que se encuentran próximos entre sí en la rueda de colores.</p> </div> </div>
+    <div id="modalTriadico" class="modal"> <div class="modal-content"> <span class="close" onclick="closeModal('modalTriadico')">&times;</span> <h2>Triádico</h2> <p>Los colores triádicos son un esquema cromático que utiliza tres colores que están equidistantes entre sí en la rueda cromática. Esto significa que, al unir estos colores, se forma un triángulo equilátero.</p> </div> </div>
+    <div id="modalTetradico" class="modal"> <div class="modal-content"> <span class="close" onclick="closeModal('modalTetradico')">&times;</span> <h2>Tetrádico</h2> <p>Los colores tetrádicos se refieren a un esquema de color que utiliza cuatro colores organizados en dos pares de colores complementarios.</p> </div> </div>
+
+
     <!-- Footer -->
-    <footer id="contacto">
+    <footer id="info">
         <p>© 2025 Isla del Color</p>
     </footer>
 

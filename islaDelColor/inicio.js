@@ -1,3 +1,5 @@
 function irASeccion() {
     document.getElementById("explorar").scrollIntoView({ behavior: "smooth" });
 }
+
+function openModal(id) { document.getElementById(id).style.display = "block"; } function closeModal(id) { document.getElementById(id).style.display = "none"; }
