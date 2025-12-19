@@ -51,28 +51,26 @@
     </section>
 
     <!-- Explorar -->
-    <section id="explorar" class="menu-mapa">
-        <h2>
-        🗺️ Mapa
-        </h2>
-        <ul>
-        <li><a href="temaColores/indexTemas.html">Colores por tema</a></li>
-        <li><a href="ingresarColor/indexIngresarColor.html">Ingresar color</a></li>
-        <li><a href="generadoDePaletasDeColores/indexGenerador.html">Paletas al azar</a></li>
-        </ul>
-
-        <h2><img class="brujula" src="https://img.freepik.com/fotos-premium/brujula-dibujos-animados-caja-metal-mango-metal-generativo-ai_791316-26071.jpg" alt="Brújula">Brújula</h2>
-        <p>
-            En <b>colores por tema</b>, navegaras a través de las combinaciones sorprendentes según el tema que quieras desde algo elegante hasta lo más extravagante.
-            <b>Ingresar un color</b> te permitirá descubrir paletas armoniosas basadas en tu elección.
-            Y si te sientes aventurero, <b>el generador de paletas al azar</b> te llevará a explorar combinaciones inesperadas y únicas.
-        </p>
+    <section id="explorar" class="menu-mapa"> <h2 class="titulo-mapa"> <span>🗺️ Mapa</span> 
+        <button id="btnBrujula">Brújula <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-compass"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 16l2 -6l6 -2l-2 6l-6 2" /><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 3l0 2" /><path d="M12 19l0 2" /><path d="M3 12l2 0" /><path d="M19 12l2 0" /></svg></button> </h2> 
+        <ul> 
+            <li><a href="temaColores/indexTemas.html">Colores por tema</a>
+            </li> <li><a href="ingresarColor/indexIngresarColor.html">Ingresar color</a>
+            </li> <li><a href="generadoDePaletasDeColores/indexGenerador.html">Paletas al azar</a></li> </ul> 
     </section>
+
+    <!-- Modal oculto --> 
+    <div id="modalBrujula" class="modal"> 
+        <div class="modal-contenido"> 
+            <span id="cerrarModal" class="cerrar">&times;</span> 
+            <p> En <b>colores por tema</b>, navegarás a través de las combinaciones sorprendentes según el tema que quieras desde algo elegante hasta lo más extravagante. <b>Ingresar un color</b> te permitirá descubrir paletas armoniosas basadas en tu elección. Y si te sientes aventurero, <b>el generador de paletas al azar</b> te llevará a explorar combinaciones inesperadas y únicas. </p> 
+        </div> 
+    </div>
     
     <!-- Sección de tesoros -->
     <section id="tesoros">
         <h2>Guía de tesoros</h2>
-        <p> Aqui encontrarás información sobre la teoría del color y cómo combinar colores de manera efectiva para tus proyectos.</p>
+        <p> Aqui encontrarás información sobre las herramientas sobre teoria de color que usa la isla del color.</p>
     
     <div class="cards"> 
         <!-- Complementario --> <div class="card" onclick="openModal('modalComplementario')"> <h3>Complementario</h3> </div>

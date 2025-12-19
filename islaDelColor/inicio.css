@@ -14,6 +14,8 @@
     --pergamino:#fdf6e3;
     --tesoro:#d4af37;
     --hover:#b8860b;
+    --sangre:#8b0000;
+    --madera:#984c4c;
 }
 
 /* Fondo y tipografía */
@@ -114,7 +116,7 @@ section p {
     border-bottom: 2px solid var(--tesoro);
 }
 
-/* Estilo para la sección Mapa */
+/* Estilo para el Mapa */
 .menu-mapa {
     background-color: rgba(253, 246, 227, 0.8); /* pergamino translúcido */
     border: 2px solid var(--tesoro);
@@ -165,6 +167,54 @@ section p {
     transform: translateY(-3px);
 }
 
+/*brujula*/
+
+#btnBrujula {
+    background: var(--sangre);
+    border:#007BFF;
+    cursor: pointer;
+    padding: 7px;
+    margin-left: 100px;
+}
+
+#btnBrujula svg{
+    padding-top: 2px;
+}
+
+/* Estilos del modal de la info de la brújula*/
+.modal {
+    display: none; /* oculto por defecto */
+    position: fixed;
+    z-index: 1000; /* encima de todo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color:var(--madera);
+}
+
+.modal-contenido {
+    background: #fff;
+    margin: 10% auto;
+    padding: 40px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    animation: aparecer 0.3s ease;
+}
+
+.cerrar {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@keyframes aparecer {
+    from {transform: scale(0.8); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+}
 
 /*Imagen de los tesoros*/
 
@@ -175,16 +225,7 @@ img{
     filter: brightness(1) contrast(1.2);
 }
 
-.brujula{
-    width: 10%;
-    height: 10%;
-    /*Quitar fondo a la imagen*/
-    mix-blend-mode: multiply;
-    filter: brightness(1) contrast(1.2);
-}
-
 /*Estilos de tesoros*/
-
 /* Contenedor de cartas */
 .cards {
     display: flex;
