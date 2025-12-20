@@ -94,7 +94,7 @@ p {
 /* Botón estilo tesoro */
 button {
     padding:10px 20px;
-    margin: 20px;
+    margin-bottom: 30px;
     font-size: 16px;
     color:var(--blanco);
     background-color:var(--tesoro);

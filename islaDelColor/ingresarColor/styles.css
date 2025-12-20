@@ -29,6 +29,36 @@ body {
     color: var(--negro);
     transition: background-color 0.5s ease;
 }
+/*diseño del formulario*/
+/* Contenedor del formulario */
+#color-form {
+    display: flex;
+    flex-direction: column; /* vertical  */
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 350px;
+    margin: 2rem auto;
+}
+
+/* Selector visual */
+#color-picker {
+    border: none;
+    width: 60px;
+    height: 40px;
+    cursor: pointer;
+}
+/*Selector por texto*/
+#color-input{
+    width: 60%;
+    height: 29px;
+}
+/*estilo del div que une a selector visual y por texto */
+.color-form-style {
+    display: flex;          
+    flex-direction: row;   
+    align-items: center;   
+    gap: 15px;             
+}
 
 /* Contenedor blanco para que se vea los colores adecuadamente */
 .container {
@@ -39,7 +69,7 @@ body {
     background-color:var(--blanco);
 }
 
-/* Paleta */
+/* Paletas que se generan */
 .palette-style{
     display: flex;
     flex-direction: row;
@@ -104,6 +134,8 @@ button {
     border:none;
     box-shadow: 3px 3px 0px var(--negro);
     transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 200px;
+    margin-left: 60px;
 }
 
 button:hover {

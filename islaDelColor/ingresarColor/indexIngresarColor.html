@@ -23,10 +23,12 @@
     <!-- Formulario para ingresar color -->
     <form id="color-form">
         <label for="color-input">Ingresa un color:</label>
+        <div class="color-form-style">
         <!-- Selector visual -->
         <input type="color" id="color-picker" value="#FFFFFF">
         <!-- Campo de texto para escribir el código hex -->
         <input type="text" id="color-input" value="#FFFFFF" maxlength="7" pattern="^#([A-Fa-f0-9]{6})$">
+        </div>
         <button type="submit" id="color-btn">Generar paleta</button>
     </form>
 
