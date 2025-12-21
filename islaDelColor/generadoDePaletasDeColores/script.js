@@ -14,6 +14,50 @@ function copyText(element) {
     });
 }
 
+//Botón para copiar toda la paleta 
+// Listener click del botón principal
+document.getElementById('color-btn').addEventListener('click', () => {
+    applyColorChange();
+    showToast("También puedes presionar la tecla 'espacio' ");
+
+    // Crear el botón "Copiar paleta completa" solo la primera vez
+    if (!document.getElementById('copy-palette-btn')) {
+        const btn = document.getElementById('color-btn');
+        const copyBtn = document.createElement('button');
+        copyBtn.id = 'copy-palette-btn';
+        copyBtn.textContent = 'Copiar paleta completa';
+        copyBtn.style.marginLeft = '10px';
+
+        btn.parentNode.insertBefore(copyBtn, btn.nextSibling);
+
+        // Listener para copiar toda la paleta
+        copyBtn.addEventListener('click', () => {
+            const colors = [
+                document.getElementById('color-code').textContent,
+                document.getElementById('color-name-one').textContent,
+                document.getElementById('color-name-two').textContent,
+                document.getElementById('color-name-three').textContent,
+                document.getElementById('color-name-four').textContent,
+                document.getElementById('color-name-five').textContent
+            ];
+            const paletteText = colors.join(', ');
+            navigator.clipboard.writeText(paletteText).then(() => {
+                // Cambiar texto del botón temporalmente
+                const originalText = copyBtn.textContent;
+                copyBtn.textContent = 'Paleta copiada';
+
+                // Restaurar después de 1.5 segundos
+                setTimeout(() => {
+                    copyBtn.textContent = originalText;
+                }, 1500);
+            }).catch(err => {
+                alert("Algo salió mal :( " + err);
+            });
+        });
+    }
+});
+
+
 // función que genera un color hexadecimal aleatorio
 function getRandomColor() {
     const hexChars = '0123456789ABCDEF';
@@ -177,8 +221,8 @@ function showToast(message) {
     `;
 
     // Posicionar cerca del botón
-    toast.style.top = `${rect.top + window.scrollY - 50}px`;
-    toast.style.left = `${rect.left + window.scrollX}px`;
+    toast.style.top = `${rect.top + window.scrollY-15}px`;
+    toast.style.left = `${rect.left + window.scrollX-80}px`;
 
     document.body.appendChild(toast);
 
@@ -195,8 +239,3 @@ function showToast(message) {
     }, 2000);
 }
 
-// Listener click del botón
-document.getElementById('color-btn').addEventListener('click', () => {
-    applyColorChange();
-    showToast("También puedes presionar la tecla 'espacio' ");
-});
