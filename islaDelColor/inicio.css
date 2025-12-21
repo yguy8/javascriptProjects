@@ -76,12 +76,14 @@ section h2 {
     margin-bottom: 20px;
     color: var(--color-negro);
     text-shadow: 1px 1px var(--tesoro);
+    font-weight: bold;
 }
 
 section p {
     max-width: 700px;
     margin: 0 auto;
     line-height: 1.6;
+    font-weight: bold;
 }
 
 /* Menú superior */
@@ -218,7 +220,7 @@ section p {
 }
 
 .cerrar {
-    color: var(--rojo);
+    color: var(--color-negro);
     float: right;
     margin-top: -40px;
     margin-right: -15px;
@@ -226,7 +228,9 @@ section p {
     font-weight: bold;
     cursor: pointer;
 }
-
+.cerrar:hover{
+    color: var(--rojo);
+}
 @keyframes aparecer {
     from {transform: scale(0.8); opacity: 0;}
     to {transform: scale(1); opacity: 1;}
@@ -235,8 +239,8 @@ section p {
 /*Imagen de los tesoros*/
 
 img{
-    width: 50%;
-    height: 50%;
+    width: 70%;
+    height: 70%;
     mix-blend-mode: multiply;
     filter: brightness(1) contrast(1.2);
 }
@@ -263,7 +267,7 @@ h3{
     background-image: url(https://png.pngtree.com/thumb_back/fw800/background/20231004/pngtree-closed-pirate-treasure-chest-stunning-3d-render-image_13578954.png);
     background-repeat: no-repeat;
     background-size: cover;
-    border: 2px solid #333;
+    border: 2px solid var(--color-negro);
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -310,7 +314,7 @@ h3{
 
 /* Botón cerrar */
 .close {
-    color: #333;
+    color: var(--color-negro);
     float: right;
     margin-top: -20px;
     font-size: 50px;
