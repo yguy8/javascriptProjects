@@ -157,3 +157,46 @@ function getTetradicColors(hex) {
 
     return [tetrad1, tetrad2, tetrad3];
 }
+
+// Función para mostrar un toast cerca del botón que notifica al usuario que puede usar la tecla espacio también
+let toastShown = false; // variable de control
+
+function showToast(message) {
+    if (toastShown) return; 
+    toastShown = true;
+
+    const btn = document.getElementById('color-btn');
+    const rect = btn.getBoundingClientRect();
+
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.innerHTML = `
+        <span>
+            ${message}
+        </span>
+    `;
+
+    // Posicionar cerca del botón
+    toast.style.top = `${rect.top + window.scrollY - 50}px`;
+    toast.style.left = `${rect.left + window.scrollX}px`;
+
+    document.body.appendChild(toast);
+
+    // Mostrar con animación
+    requestAnimationFrame(() => {
+        toast.classList.add('show');
+    });
+
+    // Ocultar después de 2s
+    setTimeout(() => {
+        toast.classList.remove('show');
+        toast.classList.add('hide');
+        setTimeout(() => toast.remove(), 400);
+    }, 2000);
+}
+
+// Listener click del botón
+document.getElementById('color-btn').addEventListener('click', () => {
+    applyColorChange();
+    showToast("También puedes presionar la tecla 'espacio' ");
+});
