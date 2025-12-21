@@ -43,21 +43,28 @@ body {
 /* Selector visual */
 #color-picker {
     border: none;
-    width: 60px;
+    width: 80px;
     height: 40px;
     cursor: pointer;
 }
 /*Selector por texto*/
 #color-input{
-    width: 60%;
+    width: 65%;
     height: 29px;
+}
+
+label{
+    font-weight: bold;
+    font-size: 1.2rem;
+    /*margin arriba NO a la derecha Sí abajo Sí y a la izquierda NO*/
+    margin: 0 20px 10px 0;
 }
 /*estilo del div que une a selector visual y por texto */
 .color-form-style {
     display: flex;          
     flex-direction: row;   
     align-items: center;   
-    gap: 15px;             
+    gap:10px;            
 }
 
 /* Contenedor blanco para que se vea los colores adecuadamente */
@@ -90,7 +97,6 @@ body {
     top: -25px;
     font-weight: bold;
     color: var(--negro);
-    text-shadow: 1px 1px var(--tesoro);
 }
 
 .color-box{
@@ -134,8 +140,7 @@ button {
     border:none;
     box-shadow: 3px 3px 0px var(--negro);
     transition: background-color 0.3s ease, transform 0.2s ease;
-    width: 200px;
-    margin-left: 60px;
+    width: 250px;
 }
 
 button:hover {

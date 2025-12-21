@@ -117,6 +117,7 @@ section p {
 .menu a:hover {
     color: var(--azul-boton-hover);
     border-bottom: 2px solid var(--tesoro);
+    font-weight: bold;
 }
 
 /* Estilo para el Mapa  */

@@ -59,7 +59,6 @@ body {
     top: -25px;
     font-weight: bold;
     color: var(--negro);
-    text-shadow: 1px 1px var(--tesoro);
 }
 
 .color-box{
@@ -71,7 +70,8 @@ body {
 h2 {
     margin-bottom: 20px;
     color: var(--negro);
-    text-shadow: 1px 1px var(--tesoro);
+    text-shadow: var(--tesoro);
+    font-weight: bolder;
 }
 p {
     font-size: 18px;
