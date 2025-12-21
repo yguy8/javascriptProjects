@@ -16,6 +16,7 @@
     --hover:#b8860b;
     --sangre:#8b0000;
     --madera:#984c4c;
+    --rojo:red;
 }
 
 /* Fondo y tipografía */
@@ -46,8 +47,8 @@ body {
     margin: 0 auto 30px auto;
 }
 
-/* Botón principal */
-button {
+/* Botón explorar */
+.btn {
     padding: 12px 25px;
     font-size: 16px;
     color: var(--color-blaco);
@@ -59,7 +60,7 @@ button {
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-button:hover {
+.btn:hover {
     background-color:var(--hover);
     transform: scale(1.05);
 }
@@ -116,7 +117,7 @@ section p {
     border-bottom: 2px solid var(--tesoro);
 }
 
-/* Estilo para el Mapa */
+/* Estilo para el Mapa  */
 .menu-mapa {
     background-color: rgba(253, 246, 227, 0.8); /* pergamino translúcido */
     border: 2px solid var(--tesoro);
@@ -131,6 +132,7 @@ section p {
 .menu-mapa:hover {
     transform: scale(1.02);
     box-shadow: 6px 6px 0px #000;
+    cursor: default;
 }
 
 .menu-mapa h2 {
@@ -167,21 +169,31 @@ section p {
     transform: translateY(-3px);
 }
 
-/*brujula*/
-
-#btnBrujula {
-    background: var(--sangre);
-    border:#007BFF;
+/*guia*/
+#btnGuia {
+    background: none;
     cursor: pointer;
-    padding: 7px;
-    margin-left: 100px;
+    width: 60px;
+    height: 60px;
+    border: none;
+    animation: levitar 4s infinite ease-in-out;
 }
 
-#btnBrujula svg{
-    padding-top: 2px;
+/* Animación de flotación */
+@keyframes levitar {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px); /* Sube suavemente */
+    }
+    100% {
+        transform: translateY(0);     /* Regresa despacio */
+    }
 }
 
-/* Estilos del modal de la info de la brújula*/
+
+/* Estilos del modal de la info de la guia*/
 .modal {
     display: none; /* oculto por defecto */
     position: fixed;
@@ -195,7 +207,7 @@ section p {
 }
 
 .modal-contenido {
-    background: #fff;
+    background:var(--pergamino);
     margin: 10% auto;
     padding: 40px;
     border-radius: 8px;
@@ -206,8 +218,12 @@ section p {
 }
 
 .cerrar {
+    color: var(--rojo);
     float: right;
-    font-size: 24px;
+    margin-top: -40px;
+    margin-right: -15px;
+    font-size: 50px;
+    font-weight: bold;
     cursor: pointer;
 }
 
@@ -302,7 +318,7 @@ h3{
     cursor: pointer;
 }
 .close:hover {
-    color: red;
+    color: var(--rojo);
 }
 
 

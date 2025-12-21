@@ -42,7 +42,7 @@
         En las profundidades del océano, más allá de las rutas conocidas,  
         se oculta una isla envuelta en misterio y leyendas.  
         Dicen los marineros que en sus costas embrujadas reposan cofres repletos de tesoros coloridos,  
-        y que una brújula mágica guía a los valientes hacia secretos jamás revelados.  
+        y que una guía mágica guía a los valientes hacia secretos jamás revelados.  
 
         Aquí cada color es un destino, cada matiz un hechizo.  
         Atrévete a explorar, noble aventurero, pues la Isla del Color  
@@ -51,8 +51,8 @@
     </section>
 
     <!-- Explorar -->
-    <section id="explorar" class="menu-mapa"> <h2 class="titulo-mapa"> <span>🗺️ Mapa</span> 
-        <button id="btnBrujula">Brújula <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-compass"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 16l2 -6l6 -2l-2 6l-6 2" /><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 3l0 2" /><path d="M12 19l0 2" /><path d="M3 12l2 0" /><path d="M19 12l2 0" /></svg></button> </h2> 
+    <section id="explorar" class="menu-mapa"> <h2 class="titulo-mapa"> <span>Mapa de la isla</span> 
+        <button id="btnGuia"><svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-help-square-rounded"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9 -9 9s-9 -1.8 -9 -9s1.8 -9 9 -9z" /><path d="M12 16v.01" /><path d="M12 13a2 2 0 0 0 .914 -3.782a1.98 1.98 0 0 0 -2.414 .483" /></svg></button> </h2> 
         <ul> 
             <li><a href="temaColores/indexTemas.html">Colores por tema</a>
             </li> <li><a href="ingresarColor/indexIngresarColor.html">Ingresar color</a>
@@ -60,10 +60,10 @@
     </section>
 
     <!-- Modal oculto --> 
-    <div id="modalBrujula" class="modal"> 
+    <div id="modalGuia" class="modal"> 
         <div class="modal-contenido"> 
             <span id="cerrarModal" class="cerrar">&times;</span> 
-            <p> En <b>colores por tema</b>, navegarás a través de las combinaciones sorprendentes según el tema que quieras desde algo elegante hasta lo más extravagante. <b>Ingresar un color</b> te permitirá descubrir paletas armoniosas basadas en tu elección. Y si te sientes aventurero, <b>el generador de paletas al azar</b> te llevará a explorar combinaciones inesperadas y únicas. </p> 
+            <p> En <b>colores por tema</b>, navegarás a través de las combinaciones sorprendentes según el tema que quieras desde algo elegante hasta lo más extravagante. <br> <b>Ingresar un color</b> te permitirá descubrir paletas armoniosas basadas en tu elección. Y si te sientes aventurero, <br><b>el generador de paletas al azar</b> te llevará a explorar combinaciones inesperadas y únicas. </p> 
         </div> 
     </div>
     
@@ -73,10 +73,10 @@
         <p> Aqui encontrarás información sobre las herramientas sobre teoria de color que usa la isla del color.</p>
     
     <div class="cards"> 
-        <!-- Complementario --> <div class="card" onclick="openModal('modalComplementario')"> <h3>Complementario</h3> </div>
-        <!-- Análogo --> <div class="card" onclick="openModal('modalAnalogo')"> <h3>Análogo</h3> </div> 
-        <!-- Triádico --> <div class="card" onclick="openModal('modalTriadico')"> <h3>Triádico</h3> </div> 
-        <!-- Tetrádico --><div class="card" onclick="openModal('modalTetradico')"> <h3>Tetrádico</h3> </div> 
+        <!-- Complementario --> <div class="card" onclick="openModal('modalComplementario')"> <h3>Complementarios</h3> </div>
+        <!-- Análogo --> <div class="card" onclick="openModal('modalAnalogo')"> <h3>Análogos</h3> </div> 
+        <!-- Triádico --> <div class="card" onclick="openModal('modalTriadico')"> <h3>Triádicos</h3> </div> 
+        <!-- Tetrádico --><div class="card" onclick="openModal('modalTetradico')"> <h3>Tetrádicos</h3> </div> 
     </div>
     </section>
 
