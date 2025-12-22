@@ -195,8 +195,7 @@ section p {
     }
 }
 
-
-/* Estilos del modal de la info de la guia*/
+/* ===== Estilos del modal de la info de la guía ===== */
 .modal {
     display: none; /* oculto por defecto */
     position: fixed;
@@ -206,11 +205,12 @@ section p {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color:var(--madera);
+    background-color: var(--madera);
 }
 
+/* Contenedor del contenido */
 .modal-contenido {
-    background:var(--pergamino);
+    background: var(--pergamino);
     margin: 10% auto;
     padding: 40px;
     border-radius: 8px;
@@ -220,6 +220,7 @@ section p {
     animation: aparecer 0.3s ease;
 }
 
+/* Botón de cerrar */
 .cerrar {
     color: var(--color-negro);
     float: right;
@@ -229,13 +230,36 @@ section p {
     font-weight: bold;
     cursor: pointer;
 }
-.cerrar:hover{
+.cerrar:hover {
     color: var(--rojo);
 }
+
+/* Animación */
 @keyframes aparecer {
     from {transform: scale(0.8); opacity: 0;}
     to {transform: scale(1); opacity: 1;}
 }
+
+/* ===== Estilos del texto dentro del modal ===== */
+.modal-contenido p {
+    margin-bottom: 1em;   /* espacio entre párrafos */
+    line-height: 1.5;     /* mejor legibilidad */
+    color: var(--color-negro);
+    font-size: 16px;
+}
+
+/* ===== Alternativa con lista ===== */
+.modal-contenido ul {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+.modal-contenido li {
+    margin-bottom: 0.8em;
+    line-height: 1.5;
+    color: var(--color-negro);
+    font-size: 16px;
+}
+
 
 /*Imagen de los tesoros*/
 
