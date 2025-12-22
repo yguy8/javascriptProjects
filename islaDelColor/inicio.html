@@ -78,14 +78,34 @@
         <!-- Triádico --> <div class="card" onclick="openModal('modalTriadico')"> <h3>Triádicos</h3> </div> 
         <!-- Tetrádico --><div class="card" onclick="openModal('modalTetradico')"> <h3>Tetrádicos</h3> </div> 
     </div>
-    </section>
-
+    
     <!-- Modales -->
     <div id="modalComplementario" class="modal"> <div class="modal-content"> <span class="close" onclick="closeModal('modalComplementario')">&times;</span> <h2>Complementario</h2> <p>Los colores complementarios son aquellos que se encuentran en posiciones opuestas dentro de la rueda de colores. <img src="https://www.benjaminmoore.com/-/media/sites/benjaminmoore/images/color/complementary-colors/color-wheel-complementary-640.jpg" alt="complementarios"></p> </div> </div> 
     <div id="modalAnalogo" class="modal"> <div class="modal-content"> <span class="close" onclick="closeModal('modalAnalogo')">&times;</span> <h2>Análogo</h2> <p>Los colores análogos son aquellos que se encuentran próximos entre sí en la rueda de colores. <img src="https://fthmb.tqn.com/u0sf8oG3c-6QKPC_GZYixpfphtM=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/combinar-colores-analogos-597bae1a3df78cbb7a25b740.jpg" alt="análogos"></p> </div> </div>
     <div id="modalTriadico" class="modal"> <div class="modal-content"> <span class="close" onclick="closeModal('modalTriadico')">&times;</span> <h2>Triádico</h2> <p>Los colores triádicos son un esquema cromático que utiliza tres colores que están equidistantes entre sí en la rueda cromática. Esto significa que, al unir estos colores, se forma un triángulo equilátero. <img src="https://tse1.explicit.bing.net/th/id/OIP.B2xU_EXSA_K8vkIFq_NwTgHaHa?cb=ucfimg2&ucfimg=1&w=625&h=626&rs=1&pid=ImgDetMain&o=7&rm=3" alt="triádico"></p> </div> </div>
     <div id="modalTetradico" class="modal"> <div class="modal-content"> <span class="close" onclick="closeModal('modalTetradico')">&times;</span> <h2>Tetrádico</h2> <p>Los colores tetrádicos se refieren a un esquema de color que utiliza cuatro colores organizados en dos pares de colores complementarios. <img src="https://tse3.mm.bing.net/th/id/OIP.Qt8q47S7-4aHTXq5Vadi1gHaGM?cb=ucfimg2&ucfimg=1&w=1600&h=1338&rs=1&pid=ImgDetMain&o=7&rm=3" alt="tetrádicos"></p> </div> </div>
-
+    
+    
+    <!-- Botón para desplegar info --> 
+    <button id="btnInfoIsla" class="btn-info"> ¿Cómo funciona la teoría del color en la isla? </button> 
+    <div id="infoIsla" style="display:none;">
+        <h3>Paletas de la isla</h3>
+        <p>El orden de uso es: 1 Complementario → 2 Triádicos → 1 Análogo → 1 Tetrádico</p>
+        
+        <div class="paletas">
+            <!-- Complementario -->
+        <div class="color-box complementario">Complementario</div>
+        <!-- Triádicos -->
+        <div class="color-box triadico1">Triádico 1</div>
+        <div class="color-box triadico2">Triádico 2</div>
+        <!-- Análogo -->
+        <div class="color-box analogo">Análogo</div>
+        <!-- Tetrádico -->
+        <div class="color-box tetradico">Tetrádico</div>
+    </div>
+</div>
+</section>
+    
 
     <!-- Footer -->
     <footer id="info">

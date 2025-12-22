@@ -8,3 +8,16 @@ const btnGuia = document.getElementById("btnGuia"); const modalGuia = document.g
 
 //funciones para abrir y cerrar tesoros (modales)
 function openModal(id) { document.getElementById(id).style.display = "block"; } function closeModal(id) { document.getElementById(id).style.display = "none"; }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const btnInfo = document.getElementById("btnInfoIsla");
+    const info = document.getElementById("infoIsla");
+
+    btnInfo.addEventListener("click", function() {
+        if (info.style.display === "none" || info.style.display === "") {
+            info.style.display = "block";
+        } else {
+            info.style.display = "none";
+        }
+    });
+});

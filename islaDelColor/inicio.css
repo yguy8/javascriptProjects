@@ -326,6 +326,83 @@ h3{
     color: var(--rojo);
 }
 
+/* Botón centrado para la guía de la isla */
+.btn-info {
+    display: block;
+    margin: 20px auto; /* centra horizontalmente */
+    padding: 12px 25px;
+    font-size: 16px;
+    color: var(--color-blaco);
+    background-color: var(--tesoro);
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    box-shadow: 3px 3px 0px #000;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.btn-info:hover {
+    background-color: var(--hover);
+    transform: scale(1.05);
+}
+
+/* Contenedor de la info */
+#infoIsla {
+    margin-top: 20px;
+    padding: 15px;
+    border: 2px solid var(--tesoro);
+    background: var(--pergamino);
+    border-radius: 10px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto; /* centra el bloque */
+    text-align: left;
+    box-shadow: 3px 3px 0px #000;
+}
+#infoIsla ul {
+    list-style: none;
+    padding: 0;
+}
+#infoIsla li {
+    margin: 10px 0;
+    font-weight: bold;
+}
+#infoIsla a {
+    color: var(--azul-boton-hover);
+    text-decoration: none;
+}
+#infoIsla a:hover {
+    text-decoration: underline;
+}
+/* Contenedor de las paletas */
+.paletas {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+/* Cada cuadro de color */
+.color-box {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: var(--color-blaco);
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    text-align: center;
+}
+
+/* Colores simulados */
+.complementario { background-color: #FF5733; }   /* naranja rojizo */
+.triadico1     { background-color: #33FF57; }   /* verde brillante */
+.triadico2     { background-color: #3357FF; }   /* azul intenso */
+.analogo       { background-color: #FF33A8; }   /* rosa/magenta */
+.tetradico     { background-color: #FFD433; }   /* amarillo dorado */
+
 
 /* Footer */
 footer {
