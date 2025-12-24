@@ -331,8 +331,8 @@ img{
 
 /*imagen de los modales*/
 .modal-content img {
-    width: 70%;
-    height: 70%;
+    width: 30%;
+    height: auto;
 }
 
 /* Animación */
@@ -494,6 +494,8 @@ footer h2 {
 footer p {
     margin: 5px 0 10px;
     color: var(--texto-suave, #555);
+    font-weight: bold;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .github-link {
