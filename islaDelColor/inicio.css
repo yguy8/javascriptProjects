@@ -515,6 +515,7 @@ footer p {
 .footer-image {
     width: 150px;   /* tamaño reducido */
     height: auto;
+    margin: 0 100px;
 }
 
 /* Capa fija para las joyas en toda la ventana */
