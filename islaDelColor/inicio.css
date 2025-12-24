@@ -264,8 +264,6 @@ section p {
 /*Imagen de los tesoros*/
 
 img{
-    width: 70%;
-    height: 70%;
     mix-blend-mode: multiply;
     filter: brightness(1) contrast(1.2);
 }
@@ -329,6 +327,12 @@ img{
     width: 60%;
     text-align: center;
     animation: zoomIn 0.4s;
+}
+
+/*imagen de los modales*/
+.modal-content img {
+    width: 70%;
+    height: 70%;
 }
 
 /* Animación */
@@ -470,6 +474,17 @@ footer {
     position: relative;
 }
 
+.footer-content {
+    display: flex;
+    justify-content: space-between; /* imágenes a los lados */
+    align-items: center;
+}
+
+.footer-center {
+    text-align: center;
+    flex: 1; /* ocupa el espacio central */
+}
+
 footer h2 {
     margin: 0;
     font-size: 1.4rem;
@@ -497,12 +512,17 @@ footer p {
     filter: drop-shadow(0 0 16px var(--tesoro));
 }
 
+.footer-image {
+    width: 150px;   /* tamaño reducido */
+    height: auto;
+}
+
 /* Capa fija para las joyas en toda la ventana */
 .treasure-layer {
     position: fixed;
     inset: 0;
     pointer-events: none;
-  z-index: 1; /* bajo el contenido interactivo */
+    z-index: 1; /* bajo el contenido interactivo */
 }
 
 #treasureCanvas {

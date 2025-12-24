@@ -24,12 +24,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
 //joyas del footer que van a caer ´
 // Variables claras para configuración
-const JEWEL_COUNT = 40;       // cantidad de joyas
-const MIN_SIZE = 12;          // tamaño mínimo del diamante
-const MAX_SIZE = 28;          // tamaño máximo del diamante
+const JEWEL_COUNT = 43;       // cantidad de joyas
+const MIN_SIZE = 15;          // tamaño mínimo del diamante
+const MAX_SIZE = 20;          // tamaño máximo del diamante
 const FALL_SPEED_MIN = 4;     // velocidad mínima de caída
 const FALL_SPEED_MAX = 8;     // velocidad máxima de caída
-const MARGIN = 350;           // ancho de las esquinas (qué tan pegadas al borde)
+const MARGIN = 400;           // ancho de las esquinas (qué tan pegadas al borde)
 let spawned = false;
 
 // Ajusta el canvas al tamaño de la ventana
@@ -87,7 +87,7 @@ function drawDiamond(ctx, x, y, size, color) {
 
 // Genera colores aleatorios
 function randomColor() {
-    const colors = ["#00c3ff", "#00e38b", "#ff4da6", "#ffd54a", "#7c4dff"];
+    const colors = ["#73dafaff", "#03da88ff", "#fb2a2aff", "#e8b50eff", "#cd4df8ff"];
     return colors[Math.floor(Math.random() * colors.length)];
 }
 
@@ -97,7 +97,7 @@ function spawnDiamonds(canvas) {
     const W = canvas.clientWidth;
     const H = canvas.clientHeight;
 
-    const FALL_TARGET = H - 50; // altura final (50px antes del fondo)
+    const FALL_TARGET = H - 45; // altura final (45px antes del fondo)
 
     const diamonds = [];
     for (let i = 0; i < JEWEL_COUNT; i++) {
