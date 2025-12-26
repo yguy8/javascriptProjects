@@ -115,7 +115,7 @@ function spawnDiamonds(canvas) {
 
     // Detectar si es móvil (ejemplo: pantallas <= 768px)
     let FALL_TARGET;
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= 1000) {
         FALL_TARGET = H - 10; // en móvil caen casi hasta el fondo
     } else {
         FALL_TARGET = H - 45; // en desktop/tablet se quedan más arriba

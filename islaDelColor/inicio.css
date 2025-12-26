@@ -587,20 +587,18 @@ footer p {
 }
 
 .menu-mapa h2 {
-    font-size: 1.8rem;
-    margin-left: 30px;
-}
-
-.menu-mapa:hover {
-    transform: scale(1.02);
-    box-shadow: 6px 6px 0px #000;
-    cursor: default;
+    margin-left: 0;           /* quitar margen en móvil */
+    text-align: center;       /* centrar título */
 }
 
 .menu-mapa a {
-    width: 300px;
-    margin-left: 20px;
+    width: 90%;               /* que ocupen casi todo el ancho */
+    max-width: 300px;         /* límite opcional */
+    margin: 10px auto;        /* centrado automático */
+    text-align: center;
 }
+
+
 
 /*guia*/
 #btnGuia {
@@ -627,27 +625,15 @@ footer p {
 /* Contenedor de las paletas como lista */
 .paletas {
     display: flex;
-    flex-direction: column; /* lista vertical */
-    gap: 12px;              /* espacio entre ítems */
-    margin: 20px 0;
-    padding: 0;
-    max-width: 300px;       /* ancho opcional */
+    flex-direction: column;   /* apila los recuadros */
+    align-items: center;      /* centra horizontalmente */
+    gap: 12px;                /* espacio entre recuadros */
 }
 
-/* Cada ítem de color */
 .color-box {
-    width: 100%;            /* ocupa todo el ancho del contenedor */
-    min-height: 50px;       /* más rectangular que cuadrado */
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: var(--color-blanco);
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
-    text-align: center;
-    padding: 10px;
+    width: 90%;               /* que ocupen casi todo el ancho */
+    max-width: 300px;         /* límite opcional para que no se estiren demasiado */
+    margin: 0 auto;           /* centrado automático */
 }
 
     /* Footer móvil */
@@ -674,5 +660,26 @@ footer p {
 .github-link .github-icon {
     width: 32px;
     height: 32px;
+}
+}
+
+/* --- Ajuste para pantallas medianas/móviles --- */
+@media (max-width: 1100px) {
+.footer-content {
+    flex-direction: column;   /* apila todo en columna */
+    align-items: center;
+    text-align: center;
+}
+
+.footer-image {
+    display: none;            /* oculta cofres en pantallas medianas/pequeñas */
+}
+
+.footer-center h2 {
+    font-size: 1.4rem;
+}
+
+.footer-center p {
+    font-size: 0.9rem;
 }
 }
