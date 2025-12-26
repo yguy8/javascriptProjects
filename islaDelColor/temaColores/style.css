@@ -21,38 +21,24 @@ body {
     background-color: var(--pergamino);
     color: var(--negro);
     margin: 0;
-    padding: 20px;
+    padding: 0;
 }
 
-/* Header */
-header {
-    text-align: center;
-    padding: 30px;
-    background-color: var(--sangre);
-    color: var(--blanco);
-    box-shadow: inset 0 0 20px var(--negro);
-}
-
-header h1 {
-    font-size: 2.5rem;
-    text-shadow: 2px 2px var(--tesoro);
-}
-
-p{
-    font-weight: bold;
-}
 /* Menú */
 .menu {
     position: fixed;
     top: 0;
-    width: 50%;
+    width: 100%;
     background-color: var(--pergamino);
     padding: 10px 0;
     z-index: 1000;
-    border-radius: 0 0 10px 10px;
-    /*aliniación al centro provisional*/
-    right: 25%;
-    left: 25%;
+    box-shadow: 2px 2px 0px #000;
+}
+/* Ícono hamburguesa */
+.menu-toggle {
+    font-size: 24px;
+    cursor: pointer;
+    display: none; /* oculto en desktop/tablet */
 }
 
 .menu ul {
@@ -75,6 +61,24 @@ p{
 .menu a:hover {
     color: var(--azul-boton-hover);
     border-bottom: 2px solid var(--tesoro);
+}
+/* Header */
+header {
+    margin-top: 40px;
+    text-align: center;
+    padding: 30px;
+    background-color: var(--sangre);
+    color: var(--blanco);
+    box-shadow: inset 0 0 20px var(--negro);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    text-shadow: 2px 2px var(--tesoro);
+}
+
+p{
+    font-weight: bold;
 }
 
 /* Formulario */
@@ -248,16 +252,16 @@ input{
 #toast {
     visibility: hidden;
     min-width: 250px;
-    margin-left: -125px;
     background-color: var(--azul-boton-hover);
     color: var(--pergamino);
     text-align: center;
+    transform: translate(-50%, -50%); /*centrar */
     border-radius: 8px;
     padding: 12px;
     position: fixed;
     z-index: 1000;
     left: 50%;
-    bottom: 30px;
+    bottom: 70%;
     font-family: 'Cinzel Decorative', serif;
     font-weight: bold;
     box-shadow: 0 4px 8px rgba(0,0,0,0.4);
@@ -272,3 +276,147 @@ input{
 
 
 /*media queries para cualquier dispositivo*/
+@media (max-width: 670px) {
+    .menu-toggle {
+        display: block;
+        padding-left: 40px;
+    }
+
+    #menu-list {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--pergamino);
+        position: absolute;
+        top: 50px;
+        left: 0;
+        padding: 10px 0;
+    }
+
+    #menu-list li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    #menu-list.show {
+        display: flex;
+    }
+
+.menu-mapa {
+    border: none;
+    box-shadow: none;
+    background-color: rgba(253, 246, 227, 0.8); /* pergamino translúcido */
+    border-radius: 12px;
+    padding: 40px 20px;
+    margin: 40px auto;
+    max-width: 600px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Header */
+header {
+    margin-top: 50px;
+    text-align: center;
+    padding: 30px;
+    background-color: var(--sangre);
+    color: var(--blanco);
+}
+
+header h1 {
+    font-size: 1.8rem;
+    text-shadow: 2px 2px var(--tesoro);
+}
+
+p{
+    font-weight: bold;
+}
+
+/* Estilos base (móviles y pantallas pequeñas) */
+#paletteContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.palette-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    justify-items: center;
+    gap: 10px;
+    padding: 30px 60px 60px 60px;
+}
+.color-card {
+    width: 110px;
+    height: 110px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    border: 2px solid var(--madera);
+}
+
+/* Botón de eliminar en esquina superior derecha */
+.remove-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: var(--sangre);
+    color: var(--blanco);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    display: flex;         /* Centra el contenido dentro del círculo */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Botón de copiar en la parte inferior, centrado y ocupando 60% */
+.copy-btn {
+    position: absolute;    
+    bottom: 10px;              /* lo fija en la parte inferior */
+    left: 50%;                 /* lo lleva al centro horizontal */
+    transform: translateX(-50%); /* lo centra respecto a su propio ancho */
+    width: 60%;                /* ocupa el 60% del contenedor */
+    height: 35px;
+    padding: 10px;
+    margin-top: 50px;
+    background: var(--sangre);
+    border: 2px solid var(--tesoro);
+    cursor: pointer;
+    border-radius: 8px;
+    color: var(--blanco);
+    font-family: 'Cinzel Decorative', serif;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+}
+
+@media (max-width: 400px) {
+.palette-group {
+    padding: 30px 40px 55px 40px;
+}
+
+/* Botón de eliminar en esquina superior derecha */
+.remove-btn {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    background: var(--sangre);
+    color: var(--blanco);
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    display: flex;         /* Centra el contenido dentro del círculo */
+    align-items: center;
+    justify-content: center;
+}
+
+}
