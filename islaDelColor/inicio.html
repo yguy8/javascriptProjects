@@ -14,18 +14,23 @@
 <body>
 
     <!-- Menú superior -->
-    <header class="menu">
-        <ul>
+    <nav class="menu">
+        <!-- Ícono hamburguesa (solo móvil) -->
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+
+        <!-- Lista de enlaces -->
+        <ul id="menu-list">
             <li><a href="#hero">Inicio</a></li>
             <li><a href="#historia">Leyenda</a></li>
             <li><a href="#explorar">Explorar</a></li>
             <li><a href="#tesoros">Tesoros</a></li>
             <li><a href="#info">Acerca de</a></li>
         </ul>
-    </header>
+    </nav>
+
 
     <!-- Hero principal -->
-    <section id="hero" class="hero" >
+    <header id="hero" class="hero" >
         <h1>¡Bienvenido a la Isla del Color!</h1>
         <p>
         Embárcate en sus profundas y místicas aguas  
@@ -33,7 +38,7 @@
         dominar la combinación de colores perfecta para cada ocasión.
         </p>
         <button class="btn" onclick="irASeccion()">Explorar ahora</button>
-    </section>
+    </header>
 
     <!-- Narrativa -->
     <section id="historia">
