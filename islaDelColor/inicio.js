@@ -113,7 +113,13 @@ function spawnDiamonds(canvas) {
     const W = canvas.clientWidth;
     const H = canvas.clientHeight;
 
-    const FALL_TARGET = H - 45; // altura final (45px antes del fondo)
+    // Detectar si es móvil (ejemplo: pantallas <= 768px)
+    let FALL_TARGET;
+    if (window.innerWidth <= 768) {
+        FALL_TARGET = H - 10; // en móvil caen casi hasta el fondo
+    } else {
+        FALL_TARGET = H - 45; // en desktop/tablet se quedan más arriba
+    }
 
     const diamonds = [];
     for (let i = 0; i < JEWEL_COUNT; i++) {

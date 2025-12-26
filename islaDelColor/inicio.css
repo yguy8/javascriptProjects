@@ -126,7 +126,7 @@ section p {
 }
 
 
-/* Estilo para el Mapa  */
+/* Estilo para el Mapa EXPLORAR  */
 .menu-mapa {
     background-color: rgba(253, 246, 227, 0.8); /* pergamino translúcido */
     border: 2px solid var(--tesoro);
@@ -360,7 +360,7 @@ img{
     color: var(--rojo);
 }
 
-/* Botón centrado para la guía de la isla */
+/* Botón centrado para la guía EXPLORAR  de la isla */
 .btn-info {
     display: block;
     margin: 20px auto; /* centra horizontalmente */
@@ -543,56 +543,136 @@ footer p {
 /*Media queries para responsividad*/
 /* --- MÓVIL --- */
 @media (max-width: 768px) {
-  @media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-    padding-left: 40px;
-  }
+    .menu-toggle {
+        display: block;
+        padding-left: 40px;
+    }
 
-  #menu-list {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background-color: var(--pergamino);
-    position: absolute;
-    top: 50px;
-    left: 0;
-    padding: 10px 0;
-  }
+    #menu-list {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--pergamino);
+        position: absolute;
+        top: 50px;
+        left: 0;
+        padding: 10px 0;
+    }
 
-  #menu-list li {
-    margin: 10px 0;
-    text-align: center;
-  }
+    #menu-list li {
+        margin: 10px 0;
+        text-align: center;
+    }
 
-  #menu-list.show {
-    display: flex;
-  }
+    #menu-list.show {
+        display: flex;
+    }
+
+.menu-mapa {
+    border: none;
+    box-shadow: none;
+    background-color: rgba(253, 246, 227, 0.8); /* pergamino translúcido */
+    border-radius: 12px;
+    padding: 40px 20px;
+    margin: 40px auto;
+    max-width: 600px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-  /* Footer móvil */
-  .footer-content {
+.hero h1 {
+    font-size: 2rem;
+    color: var(--color-negro);
+    text-shadow: 2px 2px var(--tesoro);
+    margin-bottom: 20px;
+}
+
+.menu-mapa h2 {
+    font-size: 1.8rem;
+    margin-left: 30px;
+}
+
+.menu-mapa:hover {
+    transform: scale(1.02);
+    box-shadow: 6px 6px 0px #000;
+    cursor: default;
+}
+
+.menu-mapa a {
+    width: 300px;
+    margin-left: 20px;
+}
+
+/*guia*/
+#btnGuia {
+    background: none;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border: none;
+    animation: levitar 4s infinite ease-in-out;
+}
+
+    /*Los modales*/
+.modal-content {
+    width: 90%;
+    padding: 20px;
+}
+.modal h2 {
+    font-size: 1.5rem;
+}
+.modal-content img {
+    display: none;
+}
+
+/* Contenedor de las paletas como lista */
+.paletas {
+    display: flex;
+    flex-direction: column; /* lista vertical */
+    gap: 12px;              /* espacio entre ítems */
+    margin: 20px 0;
+    padding: 0;
+    max-width: 300px;       /* ancho opcional */
+}
+
+/* Cada ítem de color */
+.color-box {
+    width: 100%;            /* ocupa todo el ancho del contenedor */
+    min-height: 50px;       /* más rectangular que cuadrado */
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--color-blanco);
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    text-align: center;
+    padding: 10px;
+}
+
+    /* Footer móvil */
+.footer-content {
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 8px;
     padding: 12px;
-  }
+}
 
-  .footer-image {
+.footer-image {
     display: none; /* ocultar cofres en móvil */
-  }
+}
 
-  .footer-center h2 {
+.footer-center h2 {
     font-size: 18px;
-  }
+}
 
-  .footer-center p {
+.footer-center p {
     font-size: 14px;
-  }
+}
 
-  .github-link .github-icon {
-    width: 28px;
-    height: 28px;
-  }
+.github-link .github-icon {
+    width: 32px;
+    height: 32px;
+}
 }
