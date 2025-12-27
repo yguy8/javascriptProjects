@@ -1,3 +1,18 @@
+//menú hamburguesa en moviles/celulares
+const toggle = document.getElementById('menu-toggle');
+const menu = document.getElementById('menu-list');
+
+toggle.addEventListener('click', () => {
+    menu.classList.toggle('show');
+
+    // Cambiar ícono ☰ ↔ ✖
+    if (menu.classList.contains('show')) {
+        toggle.textContent = '✖';
+    } else {
+        toggle.textContent = '☰';
+    }
+});
+
 // función para copiar texto al portapapeles
 function copyText(element) {
     const parent = element.parentElement;

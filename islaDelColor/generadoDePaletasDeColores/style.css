@@ -29,6 +29,45 @@ body {
     transition: background-color 0.5s ease;
 }
 
+/* Menú pirata */
+.menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--pergamino);
+    padding: 10px 0;
+    z-index: 1000;
+    border-radius: 0 0 10px 10px;
+}
+
+/* Ícono hamburguesa */
+.menu-toggle {
+    font-size: 24px;
+    cursor: pointer;
+    display: none; /* oculto en desktop/tablet */
+}
+
+.menu ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.menu li {
+    margin: 0 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: var(--color-negro);
+    font-weight: 600;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.menu a:hover {
+    color: var(--azul-boton-hover);
+    border-bottom: 2px solid var(--tesoro);
+}
 /* Contenedor estilo pergamino */
 .container {
     text-align: center;
@@ -96,7 +135,7 @@ p {
 button {
     padding:10px 20px;
     margin-bottom: 30px;
-    font-size: 16px;
+    font-size: 18px;
     color:var(--blanco);
     background-color:var(--tesoro);
     border-radius: 6px;
@@ -106,43 +145,15 @@ button {
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+#copy-palette-btn{
+    margin-left:10px;
+}
+
 button:hover {
     background-color:var(--madera);
     transform: scale(1.05);
 }
 
-/* Menú pirata */
-.menu {
-    position: fixed;
-    top: 0;
-    width: 50%;
-    background-color: var(--pergamino);
-    padding: 10px 0;
-    z-index: 1000;
-    border-radius: 0 0 10px 10px;
-}
-
-.menu ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-}
-
-.menu li {
-    margin: 0 20px;
-}
-
-.menu a {
-    text-decoration: none;
-    color: var(--color-negro);
-    font-weight: 600;
-    transition: color 0.3s ease, border-bottom 0.3s ease;
-}
-
-.menu a:hover {
-    color: var(--azul-boton-hover);
-    border-bottom: 2px solid var(--tesoro);
-}
 
 /* Estilos generales para el toast */
 .toast {
@@ -178,4 +189,101 @@ button:hover {
 .toast svg {
     stroke: #fff;
     flex-shrink: 1;
+}
+
+/* Media query para pantallas menores a 750px */
+@media (max-width: 750px) {
+.menu-toggle {
+    display: block;
+    padding-left: 40px;
+}
+
+#menu-list {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--pergamino);
+    position: absolute;
+    top: 50px;
+    left: 0;
+    padding: 10px 0;
+}
+
+#menu-list li {
+    margin: 10px 0;
+    text-align: center;
+}
+
+#menu-list.show {
+    display: flex;
+}
+
+.menu-mapa {
+    border: none;
+    box-shadow: none;
+    background-color: rgba(253, 246, 227, 0.8); /* pergamino translúcido */
+    border-radius: 12px;
+    padding: 40px 20px;
+    margin: 40px auto;
+    max-width: 600px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+}
+
+/* Media query para pantallas menores a 612px */
+@media (max-width: 612px) {
+  /* estilo del div que une a selector visual y por texto */
+.color-form-style {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+#copy-palette-btn,
+button {
+    padding: 10px 20px;
+    margin: 30px auto;       /* centrado horizontal */
+    display: block;          /* necesario para que auto funcione */
+    font-size: 10px;
+    color: var(--blanco);
+    background-color: var(--tesoro);
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    box-shadow: 3px 3px 0px var(--negro);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 80%;              /* ancho relativo al contenedor */
+    text-align: center;      /* centra el texto dentro del botón */
+}
+
+
+#copy-palette-btn{
+    margin-bottom:30px;
+}
+
+  /* Paletas en grid: 3 arriba, 2 abajo */
+.palette-style {
+    display: grid;
+    grid-template-columns: repeat(3, 80px);
+    gap: 15px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.color-block {
+    width: 80px;
+    height: auto;
+    margin: 0;
+}
+
+.color-box {
+    width: 80px;
+    height: 80px;
+}
+
+.color-label {
+    top: -16px;
+    font-size: 1rem;
+}
 }

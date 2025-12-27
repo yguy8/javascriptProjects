@@ -29,6 +29,43 @@ body {
     color: var(--negro);
     transition: background-color 0.5s ease;
 }
+/* Menú pirata */
+.menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--pergamino);
+    padding: 10px 0;
+    z-index: 1000;
+    border-radius: 0 0 10px 10px;
+}
+/* Ícono hamburguesa */
+.menu-toggle {
+    font-size: 24px;
+    cursor: pointer;
+    display: none; /* oculto en desktop/tablet */
+}
+.menu ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.menu li {
+    margin: 0 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: var(--color-negro);
+    font-weight: 600;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.menu a:hover {
+    color: var(--azul-boton-hover);
+    border-bottom: 2px solid var(--tesoro);
+}
 /*diseño del formulario*/
 /* Contenedor del formulario */
 #color-form {
@@ -85,6 +122,7 @@ label{
     margin-top: 20px;
 }
 
+/*bloques de colores que forman la paleta*/
 .color-block{
     display: flex;
     flex-direction: column;
@@ -92,6 +130,7 @@ label{
     position: relative;
 }
 
+/*la etiqueta con el nombre del color*/
 .color-label{
     position: absolute;
     top: -25px;
@@ -99,6 +138,7 @@ label{
     color: var(--negro);
 }
 
+/*el contenedor de cada color*/
 .color-box{
     width: 100px; 
     height: 100px;
@@ -148,35 +188,145 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* Menú pirata */
-.menu {
-    position: fixed;
-    top: 0;
-    width: 50%;
-    background-color: var(--pergamino);
-    padding: 10px 0;
-    z-index: 1000;
-    border-radius: 0 0 10px 10px;
+
+/*media queries para responsividad*/
+@media (max-width: 700px) {
+.menu-toggle {
+        display: block;
+        padding-left: 40px;
 }
 
-.menu ul {
+    #menu-list {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--pergamino);
+        position: absolute;
+        top: 50px;
+        left: 0;
+        padding: 10px 0;
+    }
+
+    #menu-list li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    #menu-list.show {
+        display: flex;
+    }
+
+.menu-mapa {
+    border: none;
+    box-shadow: none;
+    background-color: rgba(253, 246, 227, 0.8); /* pergamino translúcido */
+    border-radius: 12px;
+    padding: 40px 20px;
+    margin: 40px auto;
+    max-width: 600px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+}
+
+@media(max-width: 600px){
+/* Textos */
+h2 {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: var(--negro);
+    text-shadow: 1px 1px var(--tesoro);
+}
+p {
+    font-size: 8px;
+    margin-bottom: 20px;
+}
+
+/* Contenedor del formulario */
+#color-form {
     display: flex;
-    justify-content: center;
-    list-style: none;
+    flex-direction: column;   /* vertical */
+    align-items: center;      /*centra horizontalmente los hijos */
+    justify-content: center;  /*opcional: centra también verticalmente */
+    border-radius: 8px;
+    padding: 30px;
+    max-width: 250px;
+    margin: 2rem auto;        /* centra el contenedor en la página */
 }
 
-.menu li {
-    margin: 0 20px;
+/* Selector visual */
+#color-picker {
+    border: none;
+    width: 60px;
+    height: 30px;
+    cursor: pointer;
 }
 
-.menu a {
-    text-decoration: none;
-    color: var(--color-negro);
-    font-weight: 600;
-    transition: color 0.3s ease, border-bottom 0.3s ease;
+/* Selector por texto */
+#color-input {
+    width: 60%;
+    height: 30px;
 }
 
-.menu a:hover {
-    color: var(--azul-boton-hover);
-    border-bottom: 2px solid var(--tesoro);
+
+label{
+    font-weight: bold;
+    font-size: 0.9rem;
+    /*margin arriba NO a la derecha Sí abajo Sí y a la izquierda NO*/
+    margin: 0 20px 10px 0;
+}
+
+/*estilo del div que une a selector visual y por texto */
+.color-form-style {
+    display: flex;          
+    flex-direction: row;   
+    align-items: center;   
+    gap:10px;            
+}
+
+button {
+    padding: 10px 20px;
+    margin: 20px auto;       /* centrado horizontal */
+    display: block;          /* necesario para que auto funcione */
+    font-size: 16px;
+    color: var(--blanco);
+    background-color: var(--tesoro);
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    box-shadow: 3px 3px 0px var(--negro);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 70%;              /* ancho relativo al contenedor */
+}
+
+  /* Contenedor principal más pequeño */
+#color-form {
+    max-width: 260px;   /* más estrecho */
+    padding: 10px;
+    margin: 0.8rem auto;
+}
+
+  /* Paletas en grid: 3 arriba, 2 abajo */
+.palette-style {
+    display: grid;
+    grid-template-columns: repeat(3, 80px); /* 3 columnas de 80px exactos */
+    gap: 15px;                               /* muy juntos */
+    justify-content: center;                /* centra todo el grid */
+    margin-top: 10px;
+}
+
+.color-block {
+    width: 80px;
+    height: auto;
+    margin: 0; /* sin margen extra */
+}
+
+.color-box {
+    width: 80px;
+    height: 80px;
+}
+
+.color-label {
+    top: -16px;
+    font-size: 0.8rem;
+}
 }
