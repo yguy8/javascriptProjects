@@ -29,6 +29,25 @@ function copyText(element) {
     });
 }
 
+function copyPalette() {
+    const colorSpans = document.querySelectorAll('.color-label span');
+    const colors = Array.from(colorSpans).map(span => span.textContent).join(', ');
+
+    navigator.clipboard.writeText(colors).then(() => {
+        // Seleccionamos el botón
+        const button = document.querySelector('#copy-palette-btn');
+        // Cambiamos el texto
+        button.textContent = "Copiada";
+
+        // Opcional: restaurar el texto original después de unos segundos
+        setTimeout(() => {
+            button.textContent = "Copiar paleta completa";
+        }, 2000);
+    }).catch(err => {
+        console.error("Error al copiar la paleta: ", err);
+    });
+}
+
 
 // Conversión RGB → HSL
 function rgbToHsl(r, g, b) {
